@@ -1,0 +1,3924 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Politikk og menneskerettigheter – VG3</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0f1117;
+    --paper: #f5f0e8;
+    --cream: #ede8dc;
+    --accent: #c0392b;
+    --accent2: #1a3a5c;
+    --gold: #c9a84c;
+    --muted: #6b6357;
+    --border: #d4c9b8;
+    --white: #ffffff;
+    --module1: #1a3a5c;
+    --module2: #2d6a4f;
+    --module3: #7b2d8b;
+    --module4: #c0392b;
+    --module5: #b8620a;
+    --module6: #1a6b6b;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid var(--gold);
+  }
+
+  .nav-logo {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(245,240,232,0.7);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ===== HERO ===== */
+  .hero {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 5rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: 
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 39px,
+        rgba(201,168,76,0.08) 39px,
+        rgba(201,168,76,0.08) 40px
+      );
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .hero-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: rgba(245,240,232,0.65);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-meta-item {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    color: rgba(245,240,232,0.45);
+    text-transform: uppercase;
+  }
+
+  .hero-meta-item strong {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--paper);
+    letter-spacing: 0;
+    font-weight: 600;
+    margin-top: 0.15rem;
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .section {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 3.5rem 2rem;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .section-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+
+  .section-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.2em 0.6em;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+  }
+
+  /* ===== MODULE GRID ===== */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .module-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .module-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+
+  .module-card-top {
+    height: 6px;
+  }
+
+  .module-card-body {
+    padding: 1.4rem;
+  }
+
+  .module-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  .module-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    line-height: 1.25;
+  }
+
+  .module-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+  }
+
+  .module-km-list {
+    list-style: none;
+    margin-bottom: 1rem;
+  }
+
+  .module-km-list li {
+    font-size: 0.78rem;
+    color: var(--muted);
+    padding: 0.25rem 0;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .module-km-list li::before {
+    content: '→';
+    font-size: 0.7rem;
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .module-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .module-progress-wrap {
+    margin-bottom: 0.9rem;
+  }
+
+  .module-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+    font-family: 'DM Mono', monospace;
+  }
+
+  .module-progress-bar {
+    height: 4px;
+    background: var(--border);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+
+  .module-progress-fill {
+    height: 100%;
+    border-radius: 2px;
+    transition: width 0.4s ease;
+  }
+
+  .module-expand-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: var(--muted);
+    padding: 0.3rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.05em;
+    margin-top: 0.5rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .module-keywords {
+    display: none;
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .module-keywords.open {
+    display: block;
+  }
+
+  .module-keywords-label {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .module-keyword-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+  }
+
+  .module-keyword-tag {
+    font-size: 0.72rem;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 0.2rem 0.5rem;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.9rem;
+    border-radius: 3px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .btn-primary:hover { background: #2d3344; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--border);
+  }
+
+  .btn-outline:hover {
+    border-color: var(--ink);
+    background: var(--cream);
+  }
+
+  /* ===== ACTIVITIES STRIP ===== */
+  .activities-bg {
+    background: var(--cream);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .activity-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 2px solid var(--border);
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .activity-tab {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--muted);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    transition: all 0.15s;
+    font-family: 'DM Sans', sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .activity-tab.active {
+    color: var(--ink);
+    border-bottom-color: var(--accent);
+  }
+
+  .activity-tab:hover:not(.active) {
+    color: var(--ink);
+  }
+
+  .activity-panel {
+    display: none;
+  }
+
+  .activity-panel.active {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+  }
+
+  .activity-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .activity-card:hover {
+    border-color: var(--accent2);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+  }
+
+  .activity-type {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 0.2em 0.5em;
+    border-radius: 2px;
+    display: inline-block;
+    margin-bottom: 0.6rem;
+  }
+
+  .type-quiz { background: #fff3cd; color: #856404; }
+  .type-case { background: #d1e7dd; color: #0a3622; }
+  .type-debate { background: #cfe2ff; color: #052c65; }
+  .type-research { background: #e2d9f3; color: #3d1a78; }
+  .type-writing { background: #f8d7da; color: #58151c; }
+  .type-analysis { background: #d0e4f7; color: #0c2d57; }
+
+  .activity-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.35rem;
+    line-height: 1.25;
+  }
+
+  .activity-card p {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  .difficulty {
+    display: flex;
+    gap: 3px;
+    margin-top: 0.75rem;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+  }
+
+  .dot.fill { background: var(--accent2); }
+
+  /* ===== QUIZ MODAL ===== */
+  .overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15,17,23,0.75);
+    z-index: 200;
+    backdrop-filter: blur(3px);
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .overlay.open {
+    display: flex;
+  }
+
+  .modal {
+    background: var(--white);
+    border-radius: 6px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .modal-header {
+    padding: 1.5rem 1.5rem 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 10;
+  }
+
+  .modal-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: var(--muted);
+    line-height: 1;
+    padding: 0.2rem;
+  }
+
+  .modal-close:hover { color: var(--ink); }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  /* ===== QUIZ STYLES ===== */
+  .quiz-progress {
+    background: var(--cream);
+    border-radius: 2px;
+    height: 6px;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .quiz-progress-bar {
+    height: 100%;
+    background: var(--accent2);
+    transition: width 0.4s ease;
+  }
+
+  .quiz-q-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .quiz-question {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .quiz-option {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.15s;
+    background: var(--white);
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  .quiz-option:hover:not(:disabled) {
+    border-color: var(--accent2);
+    background: #f0f5ff;
+  }
+
+  .quiz-option.correct {
+    background: #d1e7dd;
+    border-color: #0a3622;
+    color: #0a3622;
+    font-weight: 600;
+  }
+
+  .quiz-option.wrong {
+    background: #f8d7da;
+    border-color: #58151c;
+    color: #58151c;
+  }
+
+  .quiz-feedback {
+    padding: 0.9rem 1rem;
+    border-radius: 4px;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
+    display: none;
+  }
+
+  .quiz-feedback.show { display: block; }
+  .quiz-feedback.correct { background: #d1e7dd; color: #0a3622; }
+  .quiz-feedback.wrong { background: #f8d7da; color: #58151c; }
+
+  .quiz-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quiz-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+
+  .quiz-result {
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .result-score-big {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--accent2);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .result-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .result-msg {
+    font-size: 1.05rem;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+  }
+
+  /* ===== CASE TASK STYLES ===== */
+  .case-scenario {
+    background: var(--cream);
+    border-left: 4px solid var(--accent2);
+    padding: 1rem 1.2rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .case-scenario strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .task-list {
+    list-style: none;
+    counter-reset: task;
+  }
+
+  .task-list li {
+    counter-increment: task;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    line-height: 1.55;
+  }
+
+  .task-list li::before {
+    content: counter(task, decimal-leading-zero);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.15rem;
+    flex-shrink: 0;
+  }
+
+  .task-tip {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 3px;
+    padding: 0.7rem 0.9rem;
+    margin-top: 1rem;
+    font-size: 0.82rem;
+    color: #664d03;
+  }
+
+  .task-tip strong { font-weight: 600; }
+
+  /* ===== DEBATE STYLES ===== */
+  .debate-setup {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .debate-side {
+    padding: 1rem;
+    border-radius: 4px;
+    font-size: 0.87rem;
+    line-height: 1.55;
+  }
+
+  .debate-for {
+    background: #d1e7dd;
+    border: 1px solid #0a3622;
+  }
+
+  .debate-against {
+    background: #f8d7da;
+    border: 1px solid #58151c;
+  }
+
+  .debate-side strong {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ===== CONCEPT MAP ===== */
+  .concept-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .concept-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.9rem;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  .concept-card:hover {
+    border-color: var(--accent2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  .concept-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .concept-body {
+    display: none;
+    margin-top: 0.5rem;
+  }
+
+  .concept-card.open .concept-body {
+    display: block;
+  }
+
+  .concept-card p {
+    font-size: 0.77rem;
+    color: var(--ink);
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+  }
+
+  .snl-cite {
+    font-size: 0.68rem !important;
+    color: var(--muted) !important;
+    line-height: 1.45 !important;
+    border-top: 1px solid var(--border);
+    padding-top: 0.4rem;
+    margin-top: 0.3rem;
+  }
+
+  .snl-cite a {
+    color: var(--accent2);
+    text-decoration: none;
+    word-break: break-all;
+  }
+
+  .snl-cite a:hover { text-decoration: underline; }
+
+  /* ===== RESOURCES ===== */
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .resource-card {
+    display: flex;
+    gap: 0.9rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1rem;
+    align-items: flex-start;
+    transition: all 0.15s;
+  }
+
+  .resource-card:hover {
+    border-color: var(--accent2);
+  }
+
+  .resource-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+
+  .resource-card h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+  }
+
+  .resource-card p {
+    font-size: 0.77rem;
+    color: var(--muted);
+    line-height: 1.4;
+  }
+
+  /* ===== KM LIST ===== */
+  .km-grid {
+    display: grid;
+    gap: 0.6rem;
+  }
+
+  .km-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 0.85rem 1rem;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.87rem;
+    line-height: 1.55;
+    transition: border-color 0.15s;
+    cursor: default;
+  }
+
+  .km-item:hover {
+    border-color: var(--accent2);
+    background: #f8f9ff;
+  }
+
+  .km-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--accent2);
+    font-weight: 500;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+    min-width: 32px;
+  }
+
+  /* ===== TIMELINE ===== */
+  .timeline {
+    position: relative;
+    padding-left: 1.5rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -1.2rem;
+    top: 6px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent2);
+    border: 2px solid var(--paper);
+    outline: 1px solid var(--accent2);
+  }
+
+  .timeline-item h4 {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--ink);
+    color: rgba(245,240,232,0.45);
+    padding: 2rem;
+    text-align: center;
+    font-size: 0.8rem;
+    line-height: 1.7;
+    border-top: 3px solid var(--gold);
+  }
+
+  footer a { color: var(--gold); text-decoration: none; }
+
+  /* ===== MATCHING GAME ===== */
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem 1rem;
+    align-items: start;
+  }
+
+  .match-col { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .match-col-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .match-item {
+    padding: 0.6rem 0.8rem;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.83rem;
+    line-height: 1.4;
+    cursor: pointer;
+    background: var(--white);
+    transition: border-color 0.15s, background 0.15s, transform 0.1s;
+    user-select: none;
+  }
+
+  .match-item:hover:not(.matched):not(.locked) {
+    border-color: var(--accent2);
+    background: #f0f4ff;
+  }
+
+  .match-item.selected {
+    border-color: var(--accent2);
+    background: #dce8ff;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(26,58,92,0.15);
+  }
+
+  .match-item.matched {
+    border-color: #2d6a4f;
+    background: #eaf5ef;
+    color: #1e4a36;
+    cursor: default;
+    opacity: 0.85;
+  }
+
+  .match-item.wrong {
+    border-color: var(--accent);
+    background: #fdecea;
+    animation: shake 0.35s ease;
+  }
+
+  .match-score {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--muted);
+    margin-bottom: 0.9rem;
+  }
+
+  .match-score span {
+    color: var(--accent2);
+    font-weight: 600;
+  }
+
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+
+  /* ===== SPACED REPETITION ===== */
+  .sr-progress-bar {
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+    overflow: hidden;
+  }
+  .sr-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), #5ba4cf);
+    border-radius: 3px;
+    transition: width 0.4s ease;
+  }
+  .sr-meta {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-bottom: 1.2rem;
+  }
+  .sr-card {
+    background: var(--white);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.15s;
+    margin-bottom: 1rem;
+    position: relative;
+  }
+  .sr-card:hover {
+    border-color: var(--accent2);
+    box-shadow: 0 4px 16px rgba(26,58,92,0.1);
+    transform: translateY(-2px);
+  }
+  .sr-card .sr-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .sr-card .sr-def {
+    font-size: 0.87rem;
+    color: var(--ink);
+    line-height: 1.65;
+  }
+  .sr-card .sr-hint {
+    position: absolute;
+    bottom: 0.6rem;
+    left: 0;
+    right: 0;
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .sr-flip-label {
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 0.6rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .sr-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0.4rem;
+    margin-top: 0.75rem;
+  }
+  .sr-btn {
+    padding: 0.55rem 0.3rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.78rem;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.15s, transform 0.1s;
+    line-height: 1.4;
+    text-align: center;
+  }
+  .sr-btn:hover { opacity: 0.85; transform: translateY(-1px); }
+  .sr-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  .sr-stat-box {
+    text-align: center;
+    padding: 0.6rem;
+    border-radius: 6px;
+    background: var(--paper);
+  }
+  .sr-stat-box .sr-stat-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: block;
+  }
+  .sr-stat-box .sr-stat-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .sr-tag {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.6rem;
+    font-size: 0.65rem;
+    font-family: 'DM Mono', monospace;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== BYGGEBLOKK ===== */
+  .bygg-task {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+  .bygg-task-header {
+    padding: 0.9rem 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .bygg-task-header:hover { background: var(--paper); }
+  .bygg-task-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--ink);
+    flex: 1;
+  }
+  .bygg-task-meta {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .bygg-task-body { padding: 0 1rem 1rem; }
+  .bygg-step {
+    margin-top: 0.85rem;
+    border-left: 3px solid var(--border);
+    padding-left: 0.85rem;
+    transition: border-color 0.2s;
+  }
+  .bygg-step.active  { border-color: var(--accent2); }
+  .bygg-step.done    { border-color: #2d6a4f; }
+  .bygg-step.locked  { opacity: 0.4; pointer-events: none; }
+  .bygg-step-label {
+    font-size: 0.7rem;
+    font-family: 'DM Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 0.3rem;
+  }
+  .bygg-step-question {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  .bygg-step textarea {
+    width: 100%;
+    min-height: 72px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.83rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.6rem;
+    background: var(--paper);
+    color: var(--ink);
+    resize: vertical;
+    box-sizing: border-box;
+    line-height: 1.5;
+    transition: border-color 0.15s;
+  }
+  .bygg-step textarea:focus { outline: none; border-color: var(--accent2); }
+  .bygg-step-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.35rem;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+  .bygg-step-footer button {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background: var(--accent2);
+    color: white;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    transition: opacity 0.15s;
+  }
+  .bygg-step-footer button:disabled { opacity: 0.35; cursor: not-allowed; }
+  .bygg-step-footer button:not(:disabled):hover { opacity: 0.85; }
+  .bygg-feedback {
+    font-size: 0.82rem;
+    border-radius: 5px;
+    padding: 0.45rem 0.65rem;
+    margin-bottom: 0.4rem;
+    line-height: 1.45;
+  }
+  .bygg-feedback-ok {
+    background: #d8f3dc;
+    color: #1b4332;
+    border: 1px solid #95d5b2;
+  }
+  .bygg-feedback-warn {
+    background: #fff3cd;
+    color: #6d4c00;
+    border: 1px solid #ffc107;
+  }
+  .bygg-answer-display {
+    font-size: 0.83rem;
+    color: var(--ink);
+    background: var(--paper);
+    border-radius: 4px;
+    padding: 0.5rem 0.65rem;
+    line-height: 1.55;
+    border: 1px solid var(--border);
+    margin-bottom: 0.25rem;
+  }
+  .bygg-complete {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: #eaf5ef;
+    border: 1px solid #2d6a4f;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    color: #1e4a36;
+    line-height: 1.55;
+  }
+  .bygg-complete strong { display: block; margin-bottom: 0.3rem; }
+  .bygg-progress {
+    font-size: 0.68rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    margin-bottom: 0.25rem;
+  }
+  .bygg-chevron { font-size: 0.75rem; color: var(--muted); transition: transform 0.2s; }
+  .bygg-chevron.open { transform: rotate(180deg); }
+
+  /* ===== DIVIDER ===== */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+  }
+
+  /* ===== SCROLL ANIM ===== */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .hero { padding: 3rem 1.2rem 2.5rem; }
+    .section { padding: 2.5rem 1.2rem; }
+    .hero-meta { gap: 1.2rem; }
+  }
+
+  
+  /* ── SPLASH SCROLL BUTTON ────────────────────────────── */
+  .hero-scroll-btn {
+    position: absolute;
+    bottom: 2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: rgba(245,240,232,0.5);
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    padding: 0.5rem 1rem;
+  }
+  .hero-scroll-btn:hover { color: var(--gold); }
+  .hero-scroll-btn:hover .scroll-ring { border-color: var(--gold); }
+  .scroll-ring {
+    width: 42px;
+    height: 42px;
+    border: 2px solid rgba(201,168,76,0.35);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.2s;
+    animation: bob 2s ease-in-out infinite;
+  }
+  .scroll-ring svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+  }
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
+  }
+  /* ── END SPLASH ──────────────────────────────────────── */
+
+  
+  .bygg-export-btn {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+    background: var(--paper);
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .bygg-export-btn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+  .bygg-export-btn:not(:disabled):hover {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+
+  
+  /* ── SATIRE QUIZ ──────────────────────────────────────── */
+  .satire-card {
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 1.1rem 1.2rem;
+    cursor: pointer;
+    background: var(--white);
+    transition: box-shadow 0.15s, border-color 0.2s;
+    user-select: none;
+  }
+  .satire-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .satire-card .satire-headline {
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.45;
+    margin-bottom: 0.6rem;
+  }
+  .satire-card .satire-source {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.75rem;
+  }
+  .satire-btn-row {
+    display: flex;
+    gap: 0.5rem;
+  }
+  .satire-btn {
+    flex: 1;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.45em 0.5em;
+    border-radius: 3px;
+    border: 1.5px solid var(--border);
+    background: var(--paper);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+  .satire-btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+  .satire-reveal {
+    margin-top: 0.75rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
+    padding: 0.65rem 0.85rem;
+    border-radius: 5px;
+    display: none;
+  }
+  .satire-reveal.show { display: block; }
+  .satire-reveal.correct { background: #e8f5e9; border-left: 3px solid #4caf50; }
+  .satire-reveal.wrong   { background: #fff3e0; border-left: 3px solid #ff9800; }
+  .satire-reveal.info    { background: #f0f4ff; border-left: 3px solid #5c7cfa; }
+
+  .nav-km-btn {
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: inherit;
+    color: var(--ink);
+    cursor: pointer;
+    padding: 0;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.15s;
+  }
+  .nav-km-btn:hover { opacity: 1; text-decoration: underline; }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  .site-footer {
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    padding: 1.5rem 2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    opacity: 0.85;
+  }
+  .site-footer a {
+    color: var(--paper);
+    opacity: 0.6;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">POS05-02 · VG3</div>
+  <ul class="nav-links">
+    <li><a href="#moduler">Moduler</a></li>
+    <li><a href="#aktiviteter">Aktiviteter</a></li>
+    <li><a href="#kompetansemål">Kompetansemål</a></li>
+    <li><a href="#ressurser">Ressurser</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Studiespesialisering · Programfag</div>
+    <h1>Politikk og<br><em>menneske&shy;rettigheter</em></h1>
+    <p class="hero-sub">Et programfag i statsvitenskapelig metode, demokratiforståelse, makt og internasjonale rettigheter. Her finner du moduler, tester og oppgaver knyttet til læreplanen.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">Klasse<strong>VG3</strong></div>
+      <div class="hero-meta-item">Læreplan<strong>POS05-02</strong></div>
+      <div class="hero-meta-item">Kompetansemål<strong>13 mål</strong></div>
+      <div class="hero-meta-item">Moduler<strong>5 temaer</strong></div>
+    </div>
+  </div>
+  <button class="hero-scroll-btn" onclick="document.getElementById('moduler').scrollIntoView({behavior:'smooth'})" aria-label="Scroll til innhold">
+    <span>Se innhold</span>
+    <div class="scroll-ring">
+      <svg viewBox="0 0 16 16"><polyline points="4,6 8,10 12,6"/></svg>
+    </div>
+  </button>
+</header>
+
+<!-- MODULES -->
+<section id="kompetansemål" style="background: var(--paper);">
+  <div class="section fade-in">
+    <div class="section-header" style="cursor:pointer;user-select:none;margin-bottom:0;" onclick="kmToggle()" title="Klikk for å vise/skjule kompetansemålene">
+      <h2 style="flex:1;">Kompetansemål</h2>
+      <span class="section-tag">POS05-02</span>
+      <span id="km-chevron" style="font-size:0.9rem;color:var(--muted);margin-left:1rem;">&#9660;</span>
+    </div>
+    <div id="km-body" style="display:none;padding-top:1.5rem;">
+      <div class="km-grid">
+        <div class="km-item"><span class="km-num">KM 01</span> Vurdere informasjon for å analysere faglige spørsmål og problemstillinger</div>
+        <div class="km-item"><span class="km-num">KM 02</span> Bruke statsvitenskapelige teorier og modeller i arbeid med faglige spørsmål, emner og problemstillinger</div>
+        <div class="km-item"><span class="km-num">KM 03</span> Reflektere over hva det innebærer å være medborger, sammenligne ulike staters styreform og analysere demokratiets utvikling og utfordringer</div>
+        <div class="km-item"><span class="km-num">KM 04</span> Utforske og analysere nasjonale og internasjonale saker eller konflikter i et statsvitenskapelig perspektiv</div>
+        <div class="km-item"><span class="km-num">KM 05</span> Gjøre rede for maktforhold, konfliktdimensjoner og kanaler for politisk innflytelse i det norske politiske systemet og drøfte hvordan dette kommer til uttrykk i praktisk politikk</div>
+        <div class="km-item"><span class="km-num">KM 06</span> Bruke samfunnsvitenskapelig metode for å analysere og drøfte velgeratferd og politisk deltakelse</div>
+        <div class="km-item"><span class="km-num">KM 07</span> Utforske, analysere og drøfte dagsaktuelle problemstillinger knyttet til bærekraft og fordeling</div>
+        <div class="km-item"><span class="km-num">KM 08</span> Drøfte rettighetene til urfolk og minoriteter nasjonalt og internasjonalt og problemstillinger knyttet til politisk innflytelse</div>
+        <div class="km-item"><span class="km-num">KM 09</span> Vurdere menneskerettighetenes betydning for demokratiet og velferdsstaten</div>
+        <div class="km-item"><span class="km-num">KM 10</span> Vurdere folkerettens rolle og betydning nasjonalt og internasjonalt</div>
+        <div class="km-item"><span class="km-num">KM 11</span> Utforske institusjoner og aktører som overvåker og håndhever menneskerettighetene, og drøfte forholdet mellom statlig, mellomstatlig og overstatlig myndighetsutøvelse</div>
+        <div class="km-item"><span class="km-num">KM 12</span> Gjøre rede for det norske politiske systemet lokalt og nasjonalt og drøfte hvilke utfordringer det norske demokratiet står overfor</div>
+        <div class="km-item"><span class="km-num">KM 13</span> Utforske og drøfte hvordan det internasjonale politiske systemet håndterer problemstillinger knyttet til krig og fred, sikkerhet, samarbeid og konfliktløsing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="moduler" style="background: var(--paper);">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2>Moduler</h2>
+      <span class="section-tag">Temabasert struktur</span>
+    </div>
+    <div class="module-grid">
+
+      <!-- M1 -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module1);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module1);">Modul 01</div>
+          <h3>Metode og analyse</h3>
+          <p>Teorier, modeller og begreper for å analysere politiske fenomener nasjonalt og internasjonalt.</p>
+          <div class="module-progress-wrap" id="prog-m1-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m1-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m1-fill" style="width:0%; background: var(--module1);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Vurdere informasjon og analysere faglige problemstillinger</li>
+            <li>Bruke statsvitenskapelige teorier og modeller</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('metode')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m1')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m1', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m1">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Hypotese</span>
+              <span class="module-keyword-tag">Kausalitet</span>
+              <span class="module-keyword-tag">Realisme</span>
+              <span class="module-keyword-tag">Statsvitenskapelig metode</span>
+              <span class="module-keyword-tag">Kildekritikk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M2 -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module2);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module2);">Modul 02</div>
+          <h3>Demokrati og andre styreformer</h3>
+          <p>Medborgerskap, demokratiets forutsetninger og sammenligning av ulike staters styreform.</p>
+          <div class="module-progress-wrap" id="prog-m2-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m2-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m2-fill" style="width:0%; background: var(--module2);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Reflektere over medborgerskap og styreformer</li>
+            <li>Demokratiets utfordringer i dag</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('demokrati')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m2')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m2', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m2">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Demokrati</span>
+              <span class="module-keyword-tag">Liberalt demokrati</span>
+              <span class="module-keyword-tag">Illiberal demokrati</span>
+              <span class="module-keyword-tag">Autoritarisme</span>
+              <span class="module-keyword-tag">Medborgerskap</span>
+              <span class="module-keyword-tag">Parlamentarisme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M3 -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module3);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module3);">Modul 03</div>
+          <h3>Makt og påvirkning</h3>
+          <p>Maktforhold, konfliktdimensjoner og kanaler for politisk innflytelse.</p>
+          <div class="module-progress-wrap" id="prog-m3-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m3-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m3-fill" style="width:0%; background: var(--module3);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Maktforhold og konfliktdimensjoner i politikk</li>
+            <li>Nasjonale og internasjonale konflikter i statsvitenskapelig perspektiv</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('makt')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m3')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m3', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m3">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Maktfordelingsprinsippet</span>
+              <span class="module-keyword-tag">Lobbyisme</span>
+              <span class="module-keyword-tag">Korporatisme</span>
+              <span class="module-keyword-tag">Soft power</span>
+              <span class="module-keyword-tag">Hard power</span>
+              <span class="module-keyword-tag">Realpolitikk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M4 (ny: Norsk politikk) -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module6);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module6);">Modul 04</div>
+          <h3>Norsk politikk</h3>
+          <p>Det norske politiske systemet, valgordningen, partier og politisk deltakelse.</p>
+          <div class="module-progress-wrap" id="prog-m4-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m4-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m4-fill" style="width:0%; background: var(--module6);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Det norske parlamentariske systemet</li>
+            <li>Valgordning, partier og velgeratferd</li>
+            <li>Urfolk og minoriteters rettigheter i Norge</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('norskpol')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m3')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m4', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m4">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Sperregrense</span>
+              <span class="module-keyword-tag">Velgeratferd</span>
+              <span class="module-keyword-tag">Korporatisme</span>
+              <span class="module-keyword-tag">Sametinget</span>
+              <span class="module-keyword-tag">Urfolk</span>
+              <span class="module-keyword-tag">Lobbyisme</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M5 -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module4);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module4);">Modul 05</div>
+          <h3>Menneskerettigheter</h3>
+          <p>Menneskerettighetenes rolle i demokratiet, velferdsstaten og internasjonal rett.</p>
+          <div class="module-progress-wrap" id="prog-m5-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m5-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m5-fill" style="width:0%; background: var(--module4);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Menneskerettighetenes betydning for demokratiet</li>
+            <li>Folkerettens rolle nasjonalt og internasjonalt</li>
+            <li>Institusjoner som overvåker menneskerettigheter</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('menneskerett')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m4')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m5', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m5">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Folkerett</span>
+              <span class="module-keyword-tag">Non-refoulement</span>
+              <span class="module-keyword-tag">R2P</span>
+              <span class="module-keyword-tag">Universalitet</span>
+              <span class="module-keyword-tag">Ratifisering</span>
+              <span class="module-keyword-tag">NGO</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- M6 -->
+      <div class="module-card">
+        <div class="module-card-top" style="background: var(--module5);"></div>
+        <div class="module-card-body">
+          <div class="module-num" style="color: var(--module5);">Modul 06</div>
+          <h3>Krig, fred og sikkerhet</h3>
+          <p>Det internasjonale politiske systemet, FN, NATO, konflikthåndtering og geopolitikk.</p>
+          <div class="module-progress-wrap" id="prog-m6-wrap">
+            <div class="module-progress-label"><span>Quizfremgang</span><span id="prog-m6-txt">–</span></div>
+            <div class="module-progress-bar"><div class="module-progress-fill" id="prog-m6-fill" style="width:0%; background: var(--module5);"></div></div>
+          </div>
+          <ul class="module-km-list">
+            <li>Internasjonal håndtering av krig, fred og sikkerhet</li>
+            <li>Statlig, mellomstatlig og overstatlig myndighet</li>
+          </ul>
+          <div class="module-actions">
+            <button class="btn btn-primary" onclick="openQuiz('internasjonal')">Ta quiz</button>
+            <button class="btn btn-outline" onclick="openCase('m5')">Oppgaver</button>
+          </div>
+          <button class="module-expand-btn" onclick="toggleKeywords('m6', this)">▸ Nøkkelbegreper</button>
+          <div class="module-keywords" id="kw-m6">
+            <div class="module-keywords-label">Nøkkelbegreper</div>
+            <div class="module-keyword-tags">
+              <span class="module-keyword-tag">Statssuverenitet</span>
+              <span class="module-keyword-tag">Multilateral avtale</span>
+              <span class="module-keyword-tag">Vetoretten</span>
+              <span class="module-keyword-tag">Sikkerhetspolitikk</span>
+              <span class="module-keyword-tag">Proporsjonalitet</span>
+              <span class="module-keyword-tag">Bærekraftig utvikling</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ACTIVITIES -->
+<section id="aktiviteter" class="activities-bg">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2>Aktiviteter og oppgaver</h2>
+      <span class="section-tag">Varierte arbeidsformer</span>
+    </div>
+
+    <div class="activity-tabs">
+      <button class="activity-tab active" onclick="switchTab('quiz', this)">📝 Quizer</button>
+      <button class="activity-tab" onclick="switchTab('case', this)">🔍 Kasusoppgaver</button>
+      <button class="activity-tab" onclick="switchTab('debate', this)">🗣 Debatt</button>
+      <button class="activity-tab" onclick="switchTab('satire', this)">🃏 Satire eller ekte?</button>
+      <button class="activity-tab" onclick="switchTab('writing', this)">✍️ Skriveoppgaver</button>
+      <button class="activity-tab" onclick="switchTab('concepts', this)">🧠 Begrepsbank</button>
+      <button class="activity-tab" onclick="switchTab('verbs', this)">📋 Samlede verb</button>
+      <button class="activity-tab" onclick="switchTab('bygg', this)">✏️ Skriveverksted</button>
+    </div>
+
+    <!-- QUIZ TAB -->
+    <div id="tab-quiz" class="activity-panel active">
+      <div class="activity-card" onclick="openQuiz('demokrati')">
+        <span class="activity-type type-quiz">Quiz · 8 spørsmål</span>
+        <h4>Demokratiteori og styreformer</h4>
+        <p>Test kunnskap om demokratimodeller, valgordninger og autoritære regimer.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openQuiz('menneskerett')">
+        <span class="activity-type type-quiz">Quiz · 7 spørsmål</span>
+        <h4>Menneskerettigheter og folkerett</h4>
+        <p>FN-erklæringer, konvensjoner, EMD og universelle rettigheter.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openQuiz('makt')">
+        <span class="activity-type type-quiz">Quiz · 6 spørsmål</span>
+        <h4>Norsk politikk og makt</h4>
+        <p>Storting, regjering, maktfordelingsprinsippet og politiske kanaler.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openQuiz('metode')">
+        <span class="activity-type type-quiz">Quiz · 6 spørsmål</span>
+        <h4>Statsvitenskapelig metode</h4>
+        <p>Kildekritikk, teorier og analytiske modeller i statsvitenskap.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openQuiz('internasjonal')">
+        <span class="activity-type type-quiz">Quiz · 7 spørsmål</span>
+        <h4>Internasjonalt system</h4>
+        <p>FN, NATO, Sikkerhetsrådet, internasjonal konfliktløsning.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+    </div>
+
+    <!-- CASE TAB -->
+    <div id="tab-case" class="activity-panel">
+      <div class="activity-card" onclick="openCase('m1')">
+        <span class="activity-type type-case">Kasusoppgave</span>
+        <h4>Analysere et politisk system: Ungarn</h4>
+        <p>Bruk statsvitenskapelig teori for å analysere demokratiets tilstand i Ungarn.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openCase('m3')">
+        <span class="activity-type type-case">Kasusoppgave</span>
+        <h4>Maktfordeling i Norge</h4>
+        <p>Undersøk en konkret norsk politisk sak og analyser maktforhold og aktører.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openCase('m4')">
+        <span class="activity-type type-case">Kasusoppgave</span>
+        <h4>Menneskerettighetssak: Uighurene i Kina</h4>
+        <p>Drøft brudd på menneskerettigheter og det internasjonale samfunnets respons.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openCase('m5')">
+        <span class="activity-type type-case">Kasusoppgave</span>
+        <h4>Krig i Europa: Russland og Ukraina</h4>
+        <p>Analyser konflikten gjennom internasjonale teorier og FN-systemets rolle.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+    </div>
+
+    <!-- DEBATE TAB -->
+    <div id="tab-debate" class="activity-panel">
+      <div class="activity-card" onclick="openDebate('intervensjoner')">
+        <span class="activity-type type-debate">Debattoppgave</span>
+        <h4>Humanitær intervensjon: rett eller feil?</h4>
+        <p>Bør det internasjonale samfunnet gripe inn militært ved grove menneskerettighetsbrudd?</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openDebate('flyktninger')">
+        <span class="activity-type type-debate">Debattoppgave</span>
+        <h4>Flyktninger og statens ansvar</h4>
+        <p>I hvilken grad har stater en forpliktelse til å ta imot flyktninger?</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openDebate('direkte')">
+        <span class="activity-type type-debate">Debattoppgave</span>
+        <h4>Direkte demokrati vs. representativt demokrati</h4>
+        <p>Bør vi bruke folkeavstemninger mer i norsk politikk?</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openDebate('veto')">
+        <span class="activity-type type-debate">Debattoppgave</span>
+        <h4>Vetoretten i FNs sikkerhetsråd</h4>
+        <p>Er vetoretten til de fem faste medlemmene demokratisk eller et hinder for fred?</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+    </div>
+
+
+    <!-- SATIRE TAB -->
+    <div id="tab-satire" class="activity-panel" style="display:none;">
+      <div style="margin-bottom:1.25rem;">
+        <span class="activity-type type-debate" style="display:inline-block;margin-bottom:0.5rem;">Kildekritikk · 6 oppgaver</span>
+        <p style="color:var(--muted);font-size:0.88rem;margin:0;">Les overskriften og avgjør: er dette en ekte nyhetssak eller politisk satire? Klikk for å avsløre svaret.</p>
+      </div>
+      <div id="satire-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;"></div>
+      <div style="margin-top:1.25rem;display:flex;gap:0.75rem;align-items:center;flex-wrap:wrap;">
+        <button onclick="satireNew()" style="font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.5em 1.2em;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);border-radius:3px;cursor:pointer;">⟳ Nytt sett</button>
+        <span id="satire-score" style="font-family:'DM Mono',monospace;font-size:0.78rem;color:var(--muted);"></span>
+      </div>
+    </div>
+
+    <!-- WRITING TAB -->
+    <div id="tab-writing" class="activity-panel">
+      <div class="activity-card" onclick="openWriting('drøfting')">
+        <span class="activity-type type-writing">Skriveoppgave · Drøfting</span>
+        <h4>Demokratiets utfordringer i vår tid</h4>
+        <p>Drøft tre sentrale utfordringer det liberale demokratiet står overfor i dag.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openWriting('analyse')">
+        <span class="activity-type type-writing">Skriveoppgave · Analyse</span>
+        <h4>Analyse av en internasjonal konflikt</h4>
+        <p>Velg en pågående internasjonal konflikt og analyser den statsvitenskapelig.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+      <div class="activity-card" onclick="openWriting('kortoppgave')">
+        <span class="activity-type type-writing">Kortoppgave</span>
+        <h4>Gjør rede for FNs rolle</h4>
+        <p>Presenter FNs opprinnelse, struktur og betydning for internasjonal fred og sikkerhet.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+    </div>
+
+    <!-- CONCEPTS TAB -->
+    <div id="tab-concepts" class="activity-panel">
+      <div class="activity-card" onclick="openConcepts()">
+        <span class="activity-type type-analysis">Begrepsbank</span>
+        <h4>Sentrale fagbegreper – alle moduler</h4>
+        <p>Oversikt over og forklaringer av nøkkelbegreper du trenger å beherske.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openMatching()">
+        <span class="activity-type type-analysis">Begrepsøvelse</span>
+        <h4>Koble begrep til definisjon</h4>
+        <p>Tren på å knytte statsvitenskapelige begreper til riktige forklaringer.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot"></div></div>
+      </div>
+      <div class="activity-card" onclick="openSR()">
+        <span class="activity-type type-quiz">Spaced repetition</span>
+        <h4>Flashcards – lær med repetisjon</h4>
+        <p>Intelligente flashcards som tilpasser seg deg: begreper du sliter med, dukker opp oftere. Fremgang lagres i nettleseren.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot fill"></div><div class="dot fill"></div></div>
+      </div>
+    </div>
+
+    <!-- VERBS TAB -->
+    <div id="tab-verbs" class="activity-panel">
+      <div class="activity-card" onclick="openVerbs()">
+        <span class="activity-type type-analysis">Faglig metaspråk</span>
+        <h4>Samlede verb i kompetansemålene</h4>
+        <p>Oversikt over alle 8 oppgaveverb i de 13 kompetansemålene – med forklaring av hva hvert verb krever av deg, og hvilke KM de opptrer i.</p>
+        <div class="difficulty"><div class="dot fill"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+    </div>
+
+    <!-- BYGGEBLOKK TAB -->
+    <div id="tab-bygg" class="activity-panel" style="display:none;">
+      <p style="font-size:0.82rem;color:var(--muted);margin-bottom:1rem;">Bygg opp et faglig argument steg for steg. Hvert steg låses opp når du har besvart det forrige. Minimum 40 tegn per svar.</p>
+      <div id="bygg-card-list"></div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- COMPETENCE GOALS -->
+
+
+<hr class="divider">
+
+<!-- RESOURCES -->
+<section id="ressurser" style="background: var(--cream);">
+  <div class="section fade-in">
+    <div class="section-header">
+      <h2>Ressurser og lenker</h2>
+      <span class="section-tag">Eksterne kilder</span>
+    </div>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #e8f4f8;">🌐</div>
+        <div>
+          <h4>FN-sambandet</h4>
+          <p>Ressurser om FN, menneskerettigheter og internasjonale spørsmål på norsk.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #f0e8f8;">⚖️</div>
+        <div>
+          <h4>Lovdata – menneskerettsloven</h4>
+          <p>EMK, SP og ØSK direkte i norsk lov.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #e8f4e8;">📰</div>
+        <div>
+          <h4>Store norske leksikon</h4>
+          <p>Faglige artikler om statsvitenskap, demokrati og politiske systemer.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #fff4e8;">🏛️</div>
+        <div>
+          <h4>Stortinget.no</h4>
+          <p>Lover, debatter og informasjon om det norske politiske systemet.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #f8e8e8;">📋</div>
+        <div>
+          <h4>Udir – Læreplan POS05-02</h4>
+          <p>Offisiell læreplan med kompetansemål, kjerneelementer og vurdering.</p>
+        </div>
+      </div>
+      <div class="resource-card">
+        <div class="resource-icon" style="background: #e8e8f8;">🗳️</div>
+        <div>
+          <h4>Freedom House</h4>
+          <p>Globale demokratiindekser og årsrapporter om politiske rettigheter.</p>
+        </div>
+      </div>
+</section>
+
+<footer>
+  <p>Politikk og menneskerettigheter · VG3 · Læreplan POS05-02</p>
+  <p style="margin-top: 0.3rem;">Utviklet for bruk i norsk videregående opplæring · <a href="https://www.udir.no/lk20/pos05-02" target="_blank">udir.no/lk20/pos05-02</a></p>
+</footer>
+
+<!-- ===== MODAL ===== -->
+<div class="overlay" id="modal-overlay" onclick="closeModal(event)">
+  <div class="modal" id="main-modal">
+    <div class="modal-header">
+      <h3 id="modal-title">–</h3>
+      <button class="modal-close" onclick="closeModalDirect()">✕</button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// ===== NYHETSFEED =====
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Load news when page is ready
+// ===== QUIZ DATA =====
+const quizzes = {
+  demokrati: {
+    title: "Quiz: Demokrati og styreformer",
+    questions: [
+      {
+        q: "Hva kjennetegner et parlamentarisk styresystem?",
+        options: ["Presidenten velges direkte i et nasjonalt valg av alle stemmeberettigede borgere", "Regjeringen utgår fra og er ansvarlig overfor parlamentet", "Domstolene har ansvar for å utnevne og avsette regjeringen", "Kongen utnevner statsministeren uavhengig av parlamentets sammensetning"],
+        correct: 1,
+        explanation: "I et parlamentarisk system som i Norge utgår regjeringen fra parlamentet (Stortinget) og er avhengig av parlamentets tillit for å sitte ved makten."
+      },
+      {
+        q: "Hva menes med 'medborgerskap' i statsvitenskapelig forstand?",
+        options: ["Aktiv deltakelse og tilhørighet i det demokratiske fellesskapet", "Å inneha gyldig pass og reisedokument utstedt av hjemstaten", "Å betale skatt og oppfylle alle juridiske plikter i bostedslandet", "Å ha bodd i landet sammenhengende i minimum fem kalenderår"],
+        correct: 0,
+        explanation: "Medborgerskap handler om mer enn formelt statsborgerskap – det innebærer aktiv deltakelse, rettigheter og plikter i et demokratisk samfunn."
+      },
+      {
+        q: "Hvilket prinsipp sikrer at lovgivende, utøvende og dømmende makt er adskilt?",
+        options: ["Subsidiaritetsprinsippet", "Proporsjonalitetsprinsippet", "Legalitetsprinsippet", "Maktfordelingsprinsippet"],
+        correct: 3,
+        explanation: "Maktfordelingsprinsippet ble formulert av Montesquieu og sikrer at ingen enkelt makt kan dominere de andre. I Norge: Stortinget (lovgivende), Regjeringen (utøvende), Domstolene (dømmende)."
+      },
+      {
+        q: "Hva kjennetegner et autoritært regime?",
+        options: ["Sterk statsmakt og begrenset politisk frihet", "Regelmessige frie valg og uavhengig domstolsystem", "Konstitusjonell maktfordeling mellom tre statsgrener", "Høy valgdeltakelse og sterk politisk opposisjon"],
+        correct: 0,
+        explanation: "Autoritære regimer kjennetegnes av begrenset politisk frihet, svake demokratiske institusjoner og liten grad av folkelig kontroll med makthaverne."
+      },
+      {
+        q: "Hva er et direkte demokrati?",
+        options: ["Et system der presidenten styrer uten parlament og folket stemmer ham inn hvert fjerde år", "Borgerne stemmer direkte om politiske beslutninger uten representanter som mellomledd", "Valgte representanter tar beslutninger på vegne av folket mellom hvert valg", "Domstolene avgjør omstridte politiske spørsmål på vegne av folket"],
+        correct: 1,
+        explanation: "I et direkte demokrati, slik Athen praktiserte det og slik Sveits delvis gjør det, tar borgerne direkte del i beslutningsprosessene – i motsetning til representativt demokrati."
+      },
+      {
+        q: "Hva er en 'valgordning'?",
+        options: ["Reglene for statlig finansiering og støtte til politiske partier", "Regelverket for hvem som har lov til å stille til politiske verv", "Systemet som omgjør avgitte stemmer til mandater og plasser", "Oversikten over antall partier som er registrert til valget"],
+        correct: 2,
+        explanation: "Valgordningen er reglene for hvordan valg gjennomføres og hvordan stemmer konverteres til representasjon. Norge bruker forholdstallsvalg med sperregrense."
+      },
+      {
+        q: "Hva er 'Freedom House' kjent for?",
+        options: ["Å rangere lands demokrati og politiske frihet i en global årsrapport", "Å drive flyktningmottak og distribuere nødhjelp i konfliktregioner", "Å gi juridisk bistand og støtte til politiske fanger i autoritære stater", "Å finansiere, støtte og bygge opp demokratiske partier i utviklingsland"],
+        correct: 0,
+        explanation: "Freedom House er en amerikansk organisasjon som siden 1973 har publisert rapporten 'Freedom in the World', som rangerer alle lands politiske rettigheter og borgerlige friheter."
+      },
+      {
+        q: "Hva er et illiberalt demokrati?",
+        options: ["Et land der det aldri avholdes valg og befolkningen ikke har politiske rettigheter", "Et ettpartisystem der opposisjonspartier er forbudt ved lov", "Et land som mangler en skriftlig grunnlov og formelle statsinstitusjoner", "Et regime som holder valg, men undergraver rettsstaten og pressefriheten"],
+        correct: 3,
+        explanation: "Et illiberalt demokrati (begrepet ble popularisert av Fareed Zakaria) holder valg, men innskrenker pressefriheten, domstolenes uavhengighet og mindretallsrettighetene. Ungarn er et eksempel."
+      }
+    ]
+  },
+  menneskerett: {
+    title: "Quiz: Menneskerettigheter og folkerett",
+    questions: [
+      {
+        q: "Hvilket år ble FNs verdenserklæring om menneskerettigheter vedtatt?",
+        options: ["1945", "1948", "1953", "1966"],
+        correct: 1,
+        explanation: "FNs verdenserklæring om menneskerettigheter ble vedtatt av FNs generalforsamling 10. desember 1948, i etterkant av andre verdenskrig."
+      },
+      {
+        q: "Hva er det viktigste skillet mellom en folkerettslig konvensjon og en erklæring?",
+        options: ["En erklæring vedtas alltid av FNs sikkerhetsråd og ikke av generalforsamlingen", "Det er ingen rettslig eller praktisk forskjell av vesentlig betydning mellom de to", "En konvensjon er bindende for ratifiserende stater; en erklæring er ikke det", "En erklæring gjelder kun i fredstid, mens en konvensjon gjelder under alle forhold"],
+        correct: 2,
+        explanation: "Konvensjoner er traktater med juridisk bindende kraft for stater som ratifiserer dem. Erklæringer er politiske eller moralske dokumenter uten direkte juridisk tvang."
+      },
+      {
+        q: "Hva er EMD?",
+        options: ["Den europeiske menneskerettighetsdomstolen i Strasbourg", "FNs overordnede organ for overvåking av menneskerettigheter på globalt nivå", "En spesialisert EU-institusjon som behandler asylklager fra tredjeland", "Den europeiske militærdomstolen for krigsforbrytelsessaker"],
+        correct: 0,
+        explanation: "EMD – Den europeiske menneskerettighetsdomstolen – er Europarådets domstol i Strasbourg som behandler klager om brudd på Den europeiske menneskerettskonvensjonen (EMK)."
+      },
+      {
+        q: "Hva innebærer prinsippet om menneskerettighetenes universalitet?",
+        options: ["At FN har rett til å bruke militærmakt for å håndheve rettighetene i alle stater", "At rettighetene er ratifisert og formelt godkjent av samtlige av verdens stater", "At de gjelder for alle mennesker uavhengig av nasjonalitet og bakgrunn", "At rettighetene utelukkende gjelder innenfor demokratiske og liberale styresystemer"],
+        correct: 2,
+        explanation: "Universalitetsprinsippet er et grunnleggende trekk ved menneskerettighetene: de tilhører alle mennesker i kraft av å være menneske, uavhengig av statsborgerskap eller bakgrunn."
+      },
+      {
+        q: "Hva er det viktigste skillet mellom sivile og sosiale rettigheter?",
+        options: ["Sivile rettigheter er juridisk sterkere og langt enklere å håndheve i domstolene", "Sosiale rettigheter er historisk eldre og mer solid forankret i internasjonal folkerett", "Sivile krever statlig ikke-inngrep; sosiale krever aktiv statlig handling", "De to typene reguleres av to helt separate og uavhengige FN-organer uten overlapp"],
+        correct: 2,
+        explanation: "Sivile og politiske rettigheter (SP-konvensjonen) handler om frihet fra statlig inngrep. Sosiale, økonomiske og kulturelle rettigheter (ØSK-konvensjonen) krever aktiv statlig handling for å oppfylles."
+      },
+      {
+        q: "Hvem er folkerettens primærsubjekter?",
+        options: ["Enkeltindivider og ikke-statlige organisasjoner (NGO-er)", "Stater og internasjonale organisasjoner", "Multinasjonale selskaper og finansinstitusjoner", "Internasjonale domstoler og voldgiftsorganer"],
+        correct: 1,
+        explanation: "Folkeretten regulerer primært forholdet mellom stater. Internasjonale organisasjoner som FN er også subjekter. Individer har fått økt rolle, men er ikke primærsubjekter."
+      },
+      {
+        q: "Hva er R2P (Responsibility to Protect)?",
+        options: ["Bilateral forsvarsavtale mellom de fem faste P5-medlemmene i sikkerhetsrådet", "EU-forordning som regulerer mottaksplikt for asylsøkere i samtlige medlemsland", "FN-prinsippet om verdenssamfunnets plikt til å beskytte sivile fra grove overgrep", "NATO-klausul om kollektivt forsvar og solidaritet ved angrep fra tredjepart"],
+        correct: 2,
+        explanation: "R2P ble vedtatt på FNs verdenstoppmøte i 2005 og fastslår at stater har ansvar for å beskytte sine borgere, og at det internasjonale samfunnet kan gripe inn hvis stater svikter dette ansvaret."
+      }
+    ]
+  },
+  makt: {
+    title: "Quiz: Makt og påvirkning",
+    questions: [
+      {
+        q: "Hvem formulerte definisjonen «A har makt over B i den grad A får B til å gjøre noe han/hun ellers ikke ville gjort»?",
+        options: ["Max Weber", "Robert Dahl", "Karl Marx", "Hannah Arendt"],
+        correct: 1,
+        explanation: "Robert Dahl formulerte denne klassiske definisjonen av makt (bekreftet av SNL). Weber hadde en annen definisjon: «enhver sjanse til å gjennomføre sin vilje innenfor en sosial relasjon, også på tross av motstand.»"
+      },
+      {
+        q: "Hva er korporatisme?",
+        options: ["At store bedrifter kjøper politisk innflytelse gjennom lobbyvirksomhet og kampanjebidrag", "At interesseorganisasjoner er formelt integrert i det politiske beslutningssystemet", "At næringslivet gir pengebidrag direkte til politiske partier de støtter", "At kommunene og fylkeskommunene styrer arbeidsmarkedspolitikken selvstendig"],
+        correct: 1,
+        explanation: "Korporatisme innebærer at interesseorganisasjoner ikke bare driver påvirkningsarbeid, men er blitt del av det politiske beslutningssystemet. I Norge er trepartssamarbeidet mellom stat, arbeidstaker- og arbeidsgiverorganisasjoner det tydeligste eksempelet (SNL)."
+      },
+      {
+        q: "Hva er hensikten med maktfordelingsprinsippet?",
+        options: ["Å gjøre statens beslutningsprosesser raskere og mer effektive", "Å gi kongen eller presidenten mer formell makt i statsstyret", "Å hindre maktmisbruk ved å dele statsmakten i tre uavhengige grener", "Å sikre at kommunene og regionene får større innflytelse over nasjonal politikk"],
+        correct: 2,
+        explanation: "Maktfordelingsprinsippet (Montesquieu) sikrer at ingen enkelt aktør eller institusjon kan samle all makt. Det beskytter mot tyranni og fremmer demokratisk kontroll gjennom lovgivende, utøvende og dømmende makt."
+      },
+      {
+        q: "Hva er lobbyvirksomhet?",
+        options: ["En form for korrupsjon som er forbudt i alle demokratiske land", "Når interesseorganisasjoner forsøker å påvirke politikere og beslutningstakere", "Når regjeringen konsulterer fageksperter i utforming av politikk", "En statlig ordning for å sikre høring i lovgivningsprosesser"],
+        correct: 1,
+        explanation: "Lobbyvirksomhet er når interesseorganisasjoner, bedrifter og enkeltpersoner forsøker å påvirke folkevalgte politikere og beslutningstakere (SNL). I Norge er det en tendens til at lobbyisme vokser som kanal ved siden av den korporative kanalen."
+      },
+      {
+        q: "Hvem utviklet begrepet 'soft power'?",
+        options: ["Henry Kissinger", "Samuel Huntington", "Joseph Nye", "Hans Morgenthau"],
+        correct: 2,
+        explanation: "Begrepet ble utviklet av Joseph Nye: soft power er evnen til å forme andres preferanser gjennom attraktivitet og overtalelse, ikke tvang. Eksempler: kultureksport, demokratiske verdier, diplomati."
+      },
+      {
+        q: "Hva kjennetegner realistisk teori i internasjonal politikk?",
+        options: ["Stater samarbeider naturlig om felles goder fordi det er rasjonelt", "Internasjonale institusjoner løser de fleste konflikter gjennom dialog", "Stater handler ut fra egeninteresse og makt i et anarkisk system", "Kulturelle og religiøse identiteter er den viktigste drivkraften i statlig atferd"],
+        correct: 2,
+        explanation: "Realisme (Hobbes, Morgenthau, Waltz) ser på stater som de viktigste aktørene i et internasjonalt anarkisk system der makt og egeninteresse styrer atferd – i motsetning til liberal teori som vektlegger samarbeid og institusjoner."
+      },
+      {
+        q: "Hva vektlegger liberal internasjonalisme?",
+        options: ["At USA og vestlige stormakter bør lede det internasjonale systemet aktivt", "At demokratier, institusjoner og gjensidig avhengighet fremmer fred", "At militær makt og avskrekking er den viktigste fredsbevarende faktoren", "At frihandel alene automatisk eliminerer årsaker til krig og konflikt"],
+        correct: 1,
+        explanation: "Liberal teori vektlegger demokratisk fred (demokratier fører sjelden krig mot hverandre), internasjonale institusjoner (FN, WTO) og gjensidig avhengighet som stabiliserende faktorer – i motsetning til realismens fokus på makt og anarki."
+      },
+      {
+        q: "Hva er 'velgeratferd' i statsvitenskapelig forstand?",
+        options: ["Reglene for hvem som har stemmerett ved norske valg", "Betegnelse på hvordan velgere avgir sine stemmer i et demokrati", "Valgsystemets regler for å omgjøre stemmer til mandater", "Mengden velgere som møter opp til valg i et land"],
+        correct: 1,
+        explanation: "Velgeratferd (SNL) er en betegnelse på hvordan velgerne går til valg og avgir sine stemmer. Forskningen studerer blant annet partilojalitet, taktisk stemmegivning og hvilke saker som påvirker velgernes valg."
+      }
+    ]
+  },
+  norskpol: {
+    title: "Quiz: Norsk politikk",
+    questions: [
+      {
+        q: "Hva er Stortingets primære funksjoner?",
+        options: ["Å håndheve loven gjennom det ordinære domstolsystemet", "Å lede og koordinere departementene i den daglige statsforvaltningen", "Å vedta lover, budsjett og kontrollere regjeringen", "Å utnevne statsministeren gjennom et direktevalg blant velgerne"],
+        correct: 2,
+        explanation: "Stortinget er Norges lovgivende forsamling med tre kjerneoppgaver: lovgivning, budsjettvedtak og kontroll av den utøvende makten (regjeringen). Norge er oppsummert som et parlamentarisk, demokratisk og enhetsstatlig konstitusjonelt monarki (SNL)."
+      },
+      {
+        q: "Hva er sperregrensen ved norske stortingsvalg?",
+        options: ["2 prosent", "4 prosent", "7 prosent", "10 prosent"],
+        correct: 1,
+        explanation: "Sperregrensen i Norge er 4 prosent (Grunnlovens § 59). Partier som ikke oppnår dette nasjonalt får ikke utjevningsmandater, men kan fortsatt vinne distriktsmandater. Ordningen ble innført fra stortingsvalget i 1989."
+      },
+      {
+        q: "Hva er Grunnlovens særstilling i norsk rett?",
+        options: ["Den gjelder bare i ekstraordinære situasjoner som krig og unntakstilstand", "Den vedtas på nytt av regjeringen hvert tiår", "Den er Norges høyeste rettslige norm og trumfer vanlige lover", "Kongen kan sette den til side i spesielle situasjoner"],
+        correct: 2,
+        explanation: "Grunnloven av 1814 er Norges konstitusjon og rangerer over vanlige lover. Den kan kun endres med 2/3 flertall i Stortinget og sikrer blant annet grunnleggende rettigheter og maktfordelingen."
+      },
+      {
+        q: "Hva er et politisk parti?",
+        options: ["Et statlig forvaltningsorgan underlagt departementet", "En organisasjon som søker politisk makt og innflytelse gjennom valg", "En interesseorganisasjon som utelukkende representerer næringslivets behov", "Et rådgivende organ som bistår regjeringen med faglige vurderinger"],
+        correct: 1,
+        explanation: "Politiske partier er sentrale aktører i demokratiet. De aggregerer interesser, rekrutterer politikere, mobiliserer velgere og formulerer politiske programmer. I Norge er folkets representanter i all hovedsak organisert i politiske partier (SNL)."
+      },
+      {
+        q: "Hva er trepartssamarbeidet i Norge?",
+        options: ["Samarbeidet mellom Stortinget, regjeringen og domstolene", "Samarbeidet mellom stat, arbeidstaker- og arbeidsgiverorganisasjoner", "Samarbeidet mellom Norge, Sverige og Danmark i Norden", "Samarbeidet mellom kommuner, fylker og staten"],
+        correct: 1,
+        explanation: "Trepartssamarbeidet er samarbeidet mellom staten og arbeidslivets parter – arbeidstakere (LO m.fl.) og arbeidsgivere (NHO m.fl.). Det er et sentralt eksempel på korporatisme i Norge, der organiserte interesser gis systematisk innflytelse (SNL)."
+      },
+      {
+        q: "Hva er Sametinget?",
+        options: ["Et lokalt samisk kulturråd uten politisk myndighet", "Et folkevalgt organ for samene i Norge, opprettet i 1989", "En avdeling i Kommunal- og distriktsdepartementet", "Et nordisk samarbeidsorgan for urfolk i Norden"],
+        correct: 1,
+        explanation: "Sametinget ble opprettet i henhold til sameloven av 1987 og åpnet i 1989. Det er samenes folkevalgte organ i Norge og avløste Norsk Sameråd. Sametinget er et sentralt virkemiddel for å ivareta samiske rettigheter og interesser (SNL)."
+      },
+      {
+        q: "Hva kjennetegner det norske parlamentariske systemet?",
+        options: ["Presidenten velges direkte av folket og kan styre uavhengig av parlamentet", "Regjeringen utgår fra Stortinget og er avhengig av dets tillit", "Domstolene utnevner og avsetter statsministeren ved behov", "Kongen har aktiv politisk makt og leder regjeringens arbeid"],
+        correct: 1,
+        explanation: "I et parlamentarisk system som Norges utgår regjeringen fra parlamentet (Stortinget) og er avhengig av parlamentets tillit. Hvis et flertall på Stortinget vedtar mistillit, må regjeringen gå av."
+      }
+    ]
+  },
+  metode: {
+    title: "Quiz: Statsvitenskapelig metode",
+    questions: [
+      {
+        q: "Hva er kildekritikk?",
+        options: ["En teknikk for korrekt sitering og kildehenvisning i akademiske tekster", "En systematisk vurdering av kilders troverdighet, relevans og opphav", "En metode for å finne og organisere litteratur til en oppgave", "En regel for hvilke kilder man har lov til å bruke i skoleoppgaver"],
+        correct: 1,
+        explanation: "Kildekritikk handler om å vurdere hvem som har laget en kilde, til hvilket formål, når, og om den er pålitelig og relevant for det spørsmålet du undersøker."
+      },
+      {
+        q: "Hva er en hypotese?",
+        options: ["En allment akseptert og empirisk godt underbygget vitenskapelig sannhet", "Et overordnet forskningsspørsmål som styrer hele undersøkelsen", "En testbar påstand om sammenheng mellom fenomener", "En endelig konklusjon basert på innsamlede og analyserte data"],
+        correct: 2,
+        explanation: "En hypotese er en tentativ, testbar påstand – et forventet funn du forsøker å verifisere eller falsifisere gjennom data og analyse."
+      },
+      {
+        q: "Hva kjennetegner kvalitativ metode sammenlignet med kvantitativ?",
+        options: ["Kvalitativ metode er alltid mer pålitelig og mer akademisk anerkjent enn kvantitativ", "Kvalitativ gir dybde og forståelse; kvantitativ gir bredde og tallbasert generalisering", "Kvantitativ brukes utelukkende innenfor økonomi og de naturvitenskapelige fagene", "Kvalitativ brukes bare i psykologi og sosialantropologi og ikke innen statsvitenskap"],
+        correct: 1,
+        explanation: "Kvalitative metoder (intervju, casestudie) gir dybde og forståelse. Kvantitative metoder (spørreskjema, statistikk) gir bredde og mulighet for statistisk generalisering."
+      },
+      {
+        q: "Hva er kjernen i realistisk teori i internasjonal politikk?",
+        options: ["Stater samarbeider naturlig om felles goder fordi det er rasjonelt og lønnsomt", "Internasjonale institusjoner som FN løser de fleste konflikter gjennom dialog", "Stater handler ut fra egeninteresse og makt i et anarkisk system", "Kulturelle og religiøse identiteter er den viktigste drivkraften i statlig atferd"],
+        correct: 2,
+        explanation: "Realisme (Hobbes, Morgenthau, Waltz) ser på stater som de viktigste aktørene i et internasjonalt anarkisk system der makt og selvinteresse styrer atferd."
+      },
+      {
+        q: "Hva vektlegger liberal internasjonalisme?",
+        options: ["At USA og vestlige stormakter bør lede det internasjonale systemet aktivt", "At demokratier, institusjoner og gjensidig avhengighet fremmer fred", "At militær makt og avskrekkingsstrategier er den viktigste fredsbevarende faktoren", "At frihandel og markedsøkonomi automatisk eliminerer årsaker til krig og konflikt"],
+        correct: 1,
+        explanation: "Liberal teori vektlegger demokratisk fred (demokratier fører sjelden krig mot hverandre), internasjonale institusjoner (FN, WTO) og gjensidig avhengighet som stabiliserende faktorer."
+      }
+    ]
+  },
+  internasjonal: {
+    title: "Quiz: Internasjonalt system",
+    questions: [
+      {
+        q: "Hva er FNs sikkerhetsråd?",
+        options: ["Det organet der alle 193 FN-land er representert og deltar på like vilkår", "Den viktigste FN-domstolen for mellomstatlige rettstvister og folkerettssaker", "Organ med fem faste og ti roterende medlemmer med ansvar for internasjonal fred", "Et rådgivende organ som avgir anbefalinger til generalforsamlingen uten bindende kraft"],
+        correct: 2,
+        explanation: "Sikkerhetsrådet har 15 medlemmer: P5 (USA, UK, Frankrike, Russland, Kina) med vetorett og 10 roterende valgte medlemmer. Det er eneste FN-organ som kan vedta bindende resolusjoner."
+      },
+      {
+        q: "Hva innebærer NATOs Artikkel 5?",
+        options: ["At alle NATO-land er forpliktet til å ha likt forsvarsbudsjett målt i prosent av BNP", "Et angrep på ett NATO-land regnes som angrep på alle", "At NATO kan angripe tredjelands territorium ved godkjenning fra generalforsamlingen", "At NATO-land ikke under noen omstendigheter kan føre krig mot hverandre"],
+        correct: 1,
+        explanation: "Artikkel 5 i Atlanterhavspakten fastslår at et væpnet angrep mot ett eller flere NATO-land anses som angrep mot alliansen som helhet, og utløser kollektiv forsvarsplikt."
+      },
+      {
+        q: "Hva er et overstatlig samarbeid?",
+        options: ["Samarbeid der alle deltakerstater beholder full og uforbeholden nasjonal suverenitet", "Samarbeid der organisasjonen kan ta bindende beslutninger over medlemsstatene", "En militærallianse mellom geografisk nærliggende naboland med felles sikkerhetsbehov", "Et bistandsprogram der industriland overfører ressurser til fattige utviklingsland"],
+        correct: 1,
+        explanation: "I overstatlige org (som EU på visse områder) kan vedtak binde stater selv om de stemte imot – suverenitet er delvis avgitt. I mellomstatlige org (som FN) bestemmer statene selv."
+      },
+      {
+        q: "Hva menes med statssuverenitet?",
+        options: ["At kongen har absolutt og uinnskrenket makt over alle statens anliggender", "At statens suverenitet er betinget av godkjenning fra FNs sikkerhetsråd", "At stater fritt kan ignorere FN-vedtak de ikke har stemt for selv", "Statens enerett til myndighetsutøvelse innen eget territorium"],
+        correct: 3,
+        explanation: "Statssuverenitet er et grunnleggende folkerettslig prinsipp: stater har eksklusiv myndighet innen eget territorium og er formelt like i det internasjonale systemet. Prinsippet er nedfelt i FN-pakten."
+      },
+      {
+        q: "Hva er ICC (Den internasjonale straffedomstolen)?",
+        options: ["En internasjonal domstol som idømmer stater erstatningsansvar for grove folkerettsbrudd", "EUs spesialiserte kriminaldomstol for grenseoverskridende og organisert kriminalitet", "Permanent domstol som straffeforfølger individer for folkemord og krigsforbrytelser", "En del av FNs sikkerhetsråds eget juridiske apparat for gjennomføring av sanksjonsvedtak"],
+        correct: 2,
+        explanation: "ICC ble opprettet gjennom Romastatutten i 2002. Den straffeforfølger individer (ikke stater) for de alvorligste internasjonale forbrytelsene, og fungerer som siste utvei når nasjonale domstoler ikke kan eller vil etterforske."
+      },
+      {
+        q: "Hvem utviklet begrepet 'soft power'?",
+        options: ["Henry Kissinger", "Samuel Huntington", "Joseph Nye", "Hans Morgenthau"],
+        correct: 2,
+        explanation: "Begrepet ble utviklet av Joseph Nye: soft power er evnen til å forme andres preferanser gjennom attraktivitet, ikke tvang. Eksempler: kultureksport, demokratiske verdier, diplomati."
+      },
+      {
+        q: "Hva er den regelbaserte internasjonale orden (rules-based order)?",
+        options: ["Et system der stormaktene, særlig USA, fastsetter spillereglene alle andre må følge", "En ordning der FN kan bruke militærmakt for å straffe stater som bryter folkeretten", "Et system der normer, traktater og institusjoner regulerer staters atferd", "En verdensorden der kun demokratiske stater har fulle rettigheter og plikter"],
+        correct: 2,
+        explanation: "Den regelbaserte internasjonale orden (post-1945) bygger på FN-pakten, internasjonale traktater og multilaterale institusjoner som WTO og IMF, der stater er bundet av felles spilleregler."
+      }
+    ]
+  }
+};
+
+
+// ===== QUIZ STATE =====
+let currentQuiz = null;
+let currentQ = 0;
+let score = 0;
+let answered = false;
+
+function openQuiz(id) {
+  currentQuiz = quizzes[id];
+  currentQ = 0;
+  score = 0;
+  answered = false;
+  document.getElementById('modal-title').textContent = currentQuiz.title;
+  renderQuestion();
+  openModal();
+}
+
+function renderQuestion() {
+  const q = currentQuiz.questions[currentQ];
+  const total = currentQuiz.questions.length;
+  const pct = (currentQ / total) * 100;
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="quiz-progress"><div class="quiz-progress-bar" style="width:${pct}%"></div></div>
+    <div class="quiz-q-num">Spørsmål ${currentQ + 1} av ${total}</div>
+    <div class="quiz-question">${q.q}</div>
+    <div class="quiz-options" id="options">
+      ${q.options.map((o, i) => `<button class="quiz-option" onclick="answerQ(${i})">${o}</button>`).join('')}
+    </div>
+    <div class="quiz-feedback" id="feedback"></div>
+    <div class="quiz-nav">
+      <div class="quiz-score">Poeng: ${score}/${total}</div>
+      <button class="btn btn-primary" id="next-btn" style="display:none" onclick="nextQ()">
+        ${currentQ < total - 1 ? 'Neste spørsmål →' : 'Se resultat →'}
+      </button>
+    </div>
+  `;
+  answered = false;
+}
+
+function answerQ(i) {
+  if (answered) return;
+  answered = true;
+  const q = currentQuiz.questions[currentQ];
+  const opts = document.querySelectorAll('.quiz-option');
+  const fb = document.getElementById('feedback');
+  opts.forEach(o => o.disabled = true);
+  if (i === q.correct) {
+    score++;
+    opts[i].classList.add('correct');
+    fb.className = 'quiz-feedback correct show';
+    fb.innerHTML = '✓ Riktig! ' + q.explanation;
+  } else {
+    opts[i].classList.add('wrong');
+    opts[q.correct].classList.add('correct');
+    fb.className = 'quiz-feedback wrong show';
+    fb.innerHTML = '✗ Feil. ' + q.explanation;
+  }
+  document.getElementById('next-btn').style.display = 'inline-flex';
+}
+
+function nextQ() {
+  if (currentQ < currentQuiz.questions.length - 1) {
+    currentQ++;
+    renderQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function showResult() {
+  const total = currentQuiz.questions.length;
+  const pct = Math.round((score / total) * 100);
+  const quizId = Object.keys(quizzes).find(k => quizzes[k] === currentQuiz);
+  saveQuizProgress(quizId, score, total);
+  let msg = '';
+  if (pct >= 80) msg = '🎉 Utmerket! Du behersker dette stoffet svært godt.';
+  else if (pct >= 60) msg = '👍 Bra! Du har god forståelse, men kan fordype deg litt mer.';
+  else msg = '📚 Les gjennom modulen igjen og prøv på nytt!';
+
+  document.getElementById('modal-body').innerHTML = `
+    <div class="quiz-result">
+      <div class="result-score-big">${score}/${total}</div>
+      <div class="result-label">${pct}% riktige svar</div>
+      <div class="result-msg">${msg}</div>
+      <button class="btn btn-primary" onclick="openQuiz('${Object.keys(quizzes).find(k => quizzes[k] === currentQuiz)}')">Prøv igjen</button>
+      &nbsp;
+      <button class="btn btn-outline" onclick="closeModalDirect()">Lukk</button>
+    </div>
+  `;
+}
+
+// ===== CASE TASKS =====
+const cases = {
+  m1: {
+    title: "Kasusoppgave: Analyser Ungarn som politisk system",
+    body: `
+      <div class="case-scenario">
+        <strong>Bakgrunn</strong>
+        Ungarn er et EU-land som siden 2010 under Viktor Orbáns regjering har blitt kritisert for å undergrave demokratiske institusjoner. EU har igangsatt rettsstatsprosedyrer mot landet, og Freedom House klassifiserer Ungarn som "delvis fritt" – ikke lenger "fritt" som de fleste EU-land.
+      </div>
+      <ul class="task-list">
+        <li>Bruk begrepene <em>liberal demokrati</em> og <em>illiberal demokrati</em> til å karakterisere det ungarske politiske systemet. Gi konkrete eksempler på trekk som plasserer Ungarn i den ene eller andre kategorien.</li>
+        <li>Hvilke statsvitenskapelige teorier (f.eks. eliteteori, pluralismeteori) gir best forklaring på maktkonsentrasjonen i Ungarn? Begrunn valget.</li>
+        <li>Sammenlign Ungarns styreform med det norske parlamentariske systemet. Hva er de viktigste likhetene og forskjellene?</li>
+        <li>Drøft: Kan et land fortsatt kalles et demokrati hvis det avholder valg, men begrenser pressefrihet og domstolenes uavhengighet?</li>
+      </ul>
+      <div class="task-tip"><strong>Tips:</strong> Bruk Freedom House-rapporten og EU-kommisjonens årsrapporter om rettsstatsutviklingen som kilder. Husk kildekritisk vurdering.</div>
+    `
+  },
+  m2: {
+    title: "Kasusoppgave: Det norske demokratiet i praksis",
+    body: `
+      <div class="case-scenario">
+        <strong>Bakgrunn</strong>
+        Norge rangerer konsekvent blant verdens mest demokratiske land (EIU Democracy Index, Freedom House). Likevel er det en rekke utfordringer: synkende valgdeltakelse blant unge, polarisering i sosiale medier, og spørsmål om lobbyisme og næringslivets innflytelse.
+      </div>
+      <ul class="task-list">
+        <li>Gjør rede for hvilke formelle og uformelle kanaler norske borgere kan bruke for å påvirke politiske beslutninger.</li>
+        <li>Hva menes med «deltakerparadokset» – at demokratiet forutsetter deltakelse, men mange velger å ikke delta? Drøft mulige årsaker og konsekvenser.</li>
+        <li>Analyser trepartssamarbeidet (staten, LO, NHO) ved hjelp av korporatismeteorien. Er dette en styrke eller svakhet for demokratiet?</li>
+        <li>Vurder: Representerer norsk politikk alle borgere likt? Ta stilling til om det finnes demokratiske underskudd.</li>
+      </ul>
+      <div class="task-tip"><strong>Tips:</strong> Se på Stortingets nettside for informasjon om komiteer, høringer og borgernes muligheter til å delta.</div>
+    `
+  },
+  m3: {
+    title: "Kasusoppgave: Makt og politisk innflytelse i Norge",
+    body: `
+      <div class="case-scenario">
+        <strong>Bakgrunn</strong>
+        I 2023 ble det mye debatt i Norge om Equinors investeringer i USA og hvilken rolle politikere, lobbyister og næringslivet spilte. Saken reiste spørsmål om maktforhold, innsyn og interessekonflikter i norsk politikk.
+      </div>
+      <ul class="task-list">
+        <li>Identifiser aktørene i saken og analyser hvilken type makt de utøver (tvangsmakt, ressursmakt, idémakt).</li>
+        <li>Bruk konfliktdimensjonsmodellen (f.eks. sentrum–periferi, by–land, klasse) til å plassere saken i en bredere politisk kontekst.</li>
+        <li>Drøft medienes rolle i saken. Fungerte pressen som den «fjerde statsmakt»?</li>
+        <li>Vurder hvilke konsekvenser saken kan ha hatt for borgernes tillit til politiske institusjoner.</li>
+      </ul>
+      <div class="task-tip"><strong>Tips:</strong> Bruk konkrete avisartikler som primærkilder og vurder dem kildekritisk.</div>
+    `
+  },
+  m4: {
+    title: "Kasusoppgave: Uighurene og internasjonale menneskerettigheter",
+    body: `
+      <div class="case-scenario">
+        <strong>Bakgrunn</strong>
+        FNs høykommissær for menneskerettigheter konkluderte i 2022 med at Kinas behandling av uighurer i Xinjiang-provinsen kan utgjøre forbrytelser mot menneskeheten. Kina avviser kritikken. Saken illustrerer spenningen mellom statssuverenitet og internasjonale menneskerettighetsforpliktelser.
+      </div>
+      <ul class="task-list">
+        <li>Hvilke menneskerettigheter er relevante i denne saken? Knytt til konkrete konvensjoner og artikler.</li>
+        <li>Drøft dilemmaet mellom statssuverenitet og det internasjonale samfunnets ansvar for å beskytte (R2P-prinsippet).</li>
+        <li>Hvilke institusjoner og mekanismer finnes for å håndheve menneskerettighetene internasjonalt? Vurder effektiviteten.</li>
+        <li>Vurder vestlige lands respons på saken. Har den vært tilstrekkelig? Hva begrenser statenes handlingsrom?</li>
+      </ul>
+      <div class="task-tip"><strong>Tips:</strong> Les OHCHR-rapporten fra 2022 (tilgjengelig på ohchr.org) og kritikken fra kinesiske myndigheter for å se begge perspektiver.</div>
+    `
+  },
+  m5: {
+    title: "Kasusoppgave: Russlands invasjon av Ukraina",
+    body: `
+      <div class="case-scenario">
+        <strong>Bakgrunn</strong>
+        Russlands fullskalainvasjon av Ukraina i februar 2022 er den største krigen i Europa siden 1945. Den reiser grunnleggende spørsmål om folkerett, NATOs rolle, FNs effektivitet og Europas sikkerhetsarkitektur.
+      </div>
+      <ul class="task-list">
+        <li>Analyser konflikten i lys av realistisk teori (makt, anarkiet, sikkerhetsdilemmaet) og liberal teori (institusjoner, normer). Hvilken teori gir best forklaringskraft?</li>
+        <li>Hvilke folkerettslige normer bryter Russland, og hva er FNs muligheter og begrensninger i å håndheve dem?</li>
+        <li>Vurder NATOs og EUs rolle i konflikten. Hva sier dette om forholdet mellom mellomstatlig og overstatlig samarbeid?</li>
+        <li>Drøft: Har krigen endret den regelbaserte internasjonale orden? Hva kan det bety for framtidig internasjonal politikk?</li>
+      </ul>
+      <div class="task-tip"><strong>Tips:</strong> Se FNs generalforsamlingsresolusjoner (som fordømte invasjonen) og Sikkerhetsrådets behandling av saken for å analysere maktforhold i FN-systemet.</div>
+    `
+  }
+};
+
+function openCase(id) {
+  const c = cases[id];
+  document.getElementById('modal-title').textContent = c.title;
+  document.getElementById('modal-body').innerHTML = c.body;
+  openModal();
+}
+
+// ===== DEBATES =====
+const debates = {
+  intervensjoner: {
+    title: "Debattoppgave: Humanitær intervensjon",
+    thesis: "Bør det internasjonale samfunnet gripe inn militært ved grove og systematiske brudd på menneskerettigheter?",
+    for_args: ["R2P-prinsippet forplikter verdenssamfunnet til å beskytte sivile", "Statssuverenitet kan ikke brukes som skjold for folkemord", "Nürnberg-prinsippene fastslår at individers rettigheter trumfer staters suverenitet", "Passivitet er i seg selv et moralsk valg"],
+    against_args: ["Humanitær intervensjon brukes ofte som påskudd for stormaktsinteresser", "Krig skaper ny humanitær krise – man kurerer ikke sykdom med sykdom", "Suverenitetsprinsippet er hjørnestenen i internasjonal orden", "Hvem gir legitimitet til å definere hva som er 'grovt nok'?"],
+    procedure: "Del klassen i to grupper. Sett av 5 min forberedelse, 3 min åpningsinnlegg per side, 2 runder replikk (1 min/replikk), deretter votering og felles refleksjon om hvilke argumenter var sterkest – og hvorfor."
+  },
+  flyktninger: {
+    title: "Debattoppgave: Flyktninger og statens ansvar",
+    thesis: "Rike demokratier har en moralsk og juridisk plikt til å ta imot et betydelig antall flyktninger.",
+    for_args: ["Flyktningkonvensjonen av 1951 og non-refoulement-prinsippet", "Rike lands historiske ansvar for globale ulikheter", "Solidaritet er en grunnverdi i liberalt demokrati", "Demografisk nødvendighet i aldrende europeiske samfunn"],
+    against_args: ["Statens primære ansvar er overfor egne borgere", "Kapasitetsproblemer i mottak og integrasjon er reelle", "Uregulert migrasjon kan utnyttes av høyrepopulistiske bevegelser til å undergrave demokratiet", "Bør heller løse problemet der det oppstår – bistand og fred"],
+    procedure: "Oxforddebatt-format: 3 talere per side, åpningserklæringer (3 min), motargumenter (2 min), avslutning (1 min). Jury bestående av 3 medelever vurderer argumentasjon og retorikk."
+  },
+  direkte: {
+    title: "Debattoppgave: Direkte vs. representativt demokrati",
+    thesis: "Norge bør bruke folkeavstemninger langt oftere i viktige politiske spørsmål.",
+    for_args: ["Folkeavstemninger gir direkte demokratisk legitimitet", "Sveitsisk modell viser at det fungerer i praksis", "Økt politisk engasjement og eierskap til beslutninger", "Representanter bryter ofte med velgernes ønsker"],
+    against_args: ["Komplekse spørsmål krever fagkunnskap representanter besitter", "Brexit viste farer ved folkeavstemninger om komplekse spørsmål", "Mindretallsrettigheter kan undergraves av flertallsvilje", "Polarisering og desinformasjon forsterkes i kampanjer"],
+    procedure: "Fishbowl-debatt: 4 elever debatterer i midten, resten observerer og noterer. Etter 10 min kan observatører ta over en stol. Felles oppsummering og refleksjon til slutt."
+  },
+  veto: {
+    title: "Debattoppgave: Vetoretten i FNs sikkerhetsråd",
+    thesis: "Vetoretten til de fem faste medlemmene bør avskaffes eller reformeres.",
+    for_args: ["Vetoretten blokkerer handling i humanitære kriser (Syria, Rwanda)", "Systemet reflekterer 1945-maktbalansen, ikke dagens verden", "Demokratisk legitimitetsproblem: 5 land kan blokkere 188 andre", "ACT-gruppen har vist at reform er mulig og nødvendig"],
+    against_args: ["Uten vetoretten ville stormakter forlatt FN (lærdommen fra Folkeforbundet)", "Vetoretten er prisen for stormaktenes deltakelse og ressurser", "Konsensusbasert handling er mer holdbar enn majoritetsdiktatur", "Reform er politisk umulig uten samtykke fra P5 selv"],
+    procedure: "Del klassen i 5 grupper som representerer P5-landene. Hvert land presenterer sitt syn (2 min), deretter forhandlingsrunde der dere forsøker å bli enige om en reform-resolusjon."
+  }
+};
+
+function openDebate(id) {
+  const d = debates[id];
+  document.getElementById('modal-title').textContent = d.title;
+  document.getElementById('modal-body').innerHTML = `
+    <div class="case-scenario">
+      <strong>Påstand til debatt</strong>
+      "${d.thesis}"
+    </div>
+    <div class="debate-setup">
+      <div class="debate-side debate-for">
+        <strong>✓ Argumenter FOR påstanden:</strong>
+        <ul style="list-style:disc;padding-left:1rem;margin-top:0.5rem;">
+          ${d.for_args.map(a => `<li style="margin-bottom:0.3rem;font-size:0.85rem">${a}</li>`).join('')}
+        </ul>
+      </div>
+      <div class="debate-side debate-against">
+        <strong>✗ Argumenter MOT påstanden:</strong>
+        <ul style="list-style:disc;padding-left:1rem;margin-top:0.5rem;">
+          ${d.against_args.map(a => `<li style="margin-bottom:0.3rem;font-size:0.85rem">${a}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+    <div style="background:var(--cream);border-radius:4px;padding:1rem 1.1rem;font-size:0.85rem;line-height:1.6;">
+      <strong style="font-size:0.88rem;">📋 Gjennomføring:</strong><br>
+      ${d.procedure}
+    </div>
+    <div class="task-tip" style="margin-top:1rem;"><strong>Refleksjonsspørsmål:</strong> Hvilke av disse argumentene er normative (verdimessige) og hvilke er empiriske (faktapåstander)? Hvordan påvirker dette debatten?</div>
+  `;
+  openModal();
+}
+
+// ===== WRITING =====
+function openWriting(id) {
+  const writings = {
+    drøfting: {
+      title: "Skriveoppgave: Demokratiets utfordringer",
+      body: `
+        <div class="case-scenario">
+          <strong>Oppgave</strong>
+          Drøft tre sentrale utfordringer det liberale demokratiet står overfor i dag. Bruk konkrete eksempler fra minst to ulike land.
+        </div>
+        <ul class="task-list">
+          <li><strong>Innledning (ca. 10%):</strong> Avklar begreper og presenter problemstilling. Hva mener du med "liberalt demokrati" og "utfordringer"?</li>
+          <li><strong>Hoveddel – utfordring 1 (ca. 25%):</strong> F.eks. demokratisk tilbakegang (backsliding). Bruk teori og eksempel.</li>
+          <li><strong>Hoveddel – utfordring 2 (ca. 25%):</strong> F.eks. desinformasjon og sosiale mediers effekt på den offentlige sfæren.</li>
+          <li><strong>Hoveddel – utfordring 3 (ca. 25%):</strong> F.eks. økt polarisering og minskende tillit til institusjoner.</li>
+          <li><strong>Avslutning (ca. 15%):</strong> Oppsummer og ta stilling: Er demokratiet truet, eller tilpasningsdyktig?</li>
+        </ul>
+        <div class="task-tip"><strong>Vurderingskriterier:</strong> Bruk av fagbegreper, statsvitenskapelig teori, kildekritisk bruk av eksempler, drøftende skrivestil (belyser flere sider), strukturert argumentasjon.</div>
+      `
+    },
+    analyse: {
+      title: "Skriveoppgave: Analyse av internasjonal konflikt",
+      body: `
+        <div class="case-scenario">
+          <strong>Oppgave</strong>
+          Velg en pågående eller nylig avsluttet internasjonal konflikt. Analyser konflikten i et statsvitenskapelig perspektiv ved hjelp av minst to teoretiske perspektiver.
+        </div>
+        <ul class="task-list">
+          <li><strong>Kontekst:</strong> Beskriv konflikten – aktørene, historisk bakgrunn, hva konflikten handler om.</li>
+          <li><strong>Teoretisk analyse 1:</strong> Analyser ved hjelp av realistisk teori. Hvilke maktinteresser driver aktørene?</li>
+          <li><strong>Teoretisk analyse 2:</strong> Analyser ved hjelp av liberal eller konstruktivistisk teori. Hvilken rolle spiller normer, identitet eller institusjoner?</li>
+          <li><strong>Menneskerettigheter:</strong> Vurder i hvilken grad konfliktens parter respekterer humanitær folkerett og menneskerettigheter.</li>
+          <li><strong>Konklusjon:</strong> Hvilken teori gir best forklaringskraft? Hva er mulige løsninger?</li>
+        </ul>
+        <div class="task-tip"><strong>Aktuelle konflikter:</strong> Russland–Ukraina, Israel–Gaza, Sudan, Myanmar, Taiwan-stredet. Velg én og hold deg til den.</div>
+      `
+    },
+    kortoppgave: {
+      title: "Kortoppgave: FNs rolle",
+      body: `
+        <div class="case-scenario">
+          <strong>Oppgave (ca. 400–600 ord)</strong>
+          Gjør rede for FNs opprinnelse, struktur og rolle i arbeidet med internasjonal fred og sikkerhet.
+        </div>
+        <ul class="task-list">
+          <li>Beskriv kort bakgrunnen for FNs opprettelse i 1945 – hva var den historiske konteksten?</li>
+          <li>Presenter de viktigste FN-organene og deres funksjon (Generalforsamlingen, Sikkerhetsrådet, Sekretariatet, ICJ).</li>
+          <li>Forklar Sikkerhetsrådets mandat og vetoretten. Hva er styrker og svakheter ved dette systemet?</li>
+          <li>Gi ett konkret eksempel på en FN-operasjon eller -resolusjon og vurder effektiviteten.</li>
+        </ul>
+        <div class="task-tip"><strong>Husk:</strong> Kortoppgaver skal være presise og faktabaserte. Unngå lange innledninger – gå rett på sak. Avslutt med en kort vurdering.</div>
+      `
+    }
+  };
+  const w = writings[id];
+  document.getElementById('modal-title').textContent = w.title;
+  document.getElementById('modal-body').innerHTML = w.body;
+  openModal();
+}
+
+// ===== CONCEPTS =====
+function openConcepts() {
+  const concepts = [
+    { term: "Statssuverenitet", def: "«Suverenitet er retten et lands myndigheter har til å styre over eget folk og territorium, og til å representere landet i møte med andre land.»", cite: "Berg, Ole T.; Fleischer, Carl August: suverenitet i Store norske leksikon på snl.no.", url: "https://snl.no/suverenitet" },
+    { term: "Demokrati", def: "«Demokrati, også kalt folkestyre, er en styreform der folket, forstått som landets voksne innbyggere, velger representanter som utformer lovene og tar viktige politiske beslutninger.»", cite: "Hovde, Kjell-Olav; Svensson, Palle; Thorsen, Dag Einar: demokrati i Store norske leksikon på snl.no.", url: "https://snl.no/demokrati" },
+    { term: "Parlamentarisme", def: "«Parlamentarisme er det prinsipp at regjeringen skal utgå fra og stå ansvarlig overfor nasjonalforsamlingen.»", cite: "Berg, Ole T.: parlamentarisme i Store norske leksikon på snl.no.", url: "https://snl.no/parlamentarisme" },
+    { term: "Maktfordelingsprinsippet", def: "«Maktfordelingsprinsippet, eller bare maktfordeling, er et politisk og juridisk prinsipp som går ut på at statsmakten skal fordeles på tre uavhengige institusjoner: en lovgivende, en utøvende og en dømmende makt.»", cite: "Thorsen, Dag Einar: maktfordelingsprinsippet i Store norske leksikon på snl.no.", url: "https://snl.no/maktfordelingsprinsippet" },
+    { term: "Non-refoulement", def: "«Non refoulement-prinsippet innebærer at ingen kan sende en person tilbake til sitt hjemland om han risikerer å bli forfulgt der. Prinsippet står i flyktningekonvensjonen og gjelder dermed for de aller fleste land i verden.»", cite: "Bahus, Vegard Bø: non refoulement i Store norske leksikon på snl.no.", url: "https://snl.no/non_refoulement" },
+    { term: "Realpolitikk", def: "«Realpolitikk er en betegnelse for en politikk hvor målet er preget av egeninteressen og virkemidlene velges ut fra rene hensiktsmessighetsvurderinger.»", cite: "Berg, Ole T.: realpolitikk i Store norske leksikon på snl.no.", url: "https://snl.no/realpolitikk" },
+    { term: "Soft power", def: "Soft power (myk makt) er en stats internasjonale innflytelse på andre måter enn militærmakt og pengemakt. Begrepet ble utviklet av den amerikanske statsviteren Joseph Nye, og inkluderer virkemidler som kultur, diplomati og bistand.", cite: "Redaksjonen ved NUPI: Bistand i krise i NUPI Skole på nupi.no. Hentet fra https://www.nupi.no/skole/hvor-hender-det/2026/bistand-i-krise", url: "https://www.nupi.no/skole/hvor-hender-det/2026/bistand-i-krise" },
+          { term: "Hard power", def: "Hard power (hard makt) er en stats bruk av militær og økonomisk makt for å påvirke andre staters adferd, gjennom tvang, sanksjoner eller trusler. Det er motsatsen til soft power.", cite: "Redaksjonen ved NUPI: Bistand i krise i NUPI Skole på nupi.no. Hentet fra https://www.nupi.no/skole/hvor-hender-det/2026/bistand-i-krise", url: "https://www.nupi.no/skole/hvor-hender-det/2026/bistand-i-krise" },
+    { term: "Multilateral avtale", def: "«Multilateral avtale er en avtale mellom tre eller flere parter, som oftest land, til forskjell fra bilateral, tosidig.»", cite: "Redaksjonen i Store norske leksikon: multilateral avtale i Store norske leksikon på snl.no.", url: "https://snl.no/multilateral_avtale" },
+    { term: "Vetoretten", def: "«Å ha vetorett betyr å ha rett til å blokkere eller utsette et vedtak eller en beslutning. Ordet veto kommer fra latin og betyr ‘jeg forbyr’.»", cite: "Evjen, Kjetil: vetorett i Store norske leksikon på snl.no.", url: "https://snl.no/vetorett" },
+    { term: "Medborgerskap", def: "«Medborgerskap er en betegnelse som i samfunnsvitenskap brukes om en tilstand der en person blir regnet og med rette kan regne seg selv som et fullverdig medlem av samfunnet. Utenforskap eller marginalisering kan i noen tilfeller brukes som antonymer til medborgerskap.»", cite: "Thorsen, Dag Einar; Lid, Inger Marie: medborgerskap i Store norske leksikon på snl.no.", url: "https://snl.no/medborgerskap" },
+    { term: "Korporatisme", def: "«Korporatisme er en styreform hvor den politiske makten springer ut av en (eller flere) forsamling(er) som er rekruttert fra korporasjoner.»", cite: "Thorsen, Dag Einar; Gran, Thorvald: korporatisme i Store norske leksikon på snl.no.", url: "https://snl.no/korporatisme" },
+    { term: "R2P", def: "«R2P er en forkortelse for det engelske Responsibility to protect, på norsk «ansvar for å beskytte», som er en lære om statens og det internasjonale samfunnets ansvar for å beskytte sivilbefolkningen mot grove menneskerettighetskrenkelser.»", cite: "Larsen, Kjetil Mujezinović: R2P i Store norske leksikon på snl.no.", url: "https://snl.no/R2P" },
+    { term: "Sperregrense", def: "«Sperregrense er i Norge prosentandelen av avgitte stemmer et parti må oppnå for å bli tildelt utjevningsmandater. Sperregrensen er fire prosent og gjelder bare ved stortingsvalg.»", cite: "Redaksjonen i Store norske leksikon: sperregrense i Store norske leksikon på snl.no.", url: "https://snl.no/sperregrense" },
+    { term: "Illiberal demokrati", def: "Begrepet illiberale demokratier brukes for å beskrive et styresett hvor politiske ledere blir valgt av folket gjennom hovedsakelig frie flerpartivalg, men hvor rettsstaten svekkes og sivile rettigheter, som ytrings- og organisasjonsfrihet, blir kraftig begrenset. Illiberale demokratier kjennetegnes også ved at prinsipper om maktfordelingen utvannes og uavhengigheten til institusjoner som domstoler og pressen begrenses.", cite: "Redaksjonen ved NUPI: Demokrati under press i NUPI Skole på nupi.no. Hentet fra https://www.nupi.no/skole/hvor-hender-det/2018/demokrati-under-press", url: "https://www.nupi.no/skole/hvor-hender-det/2018/demokrati-under-press" },
+    { term: "Folkerett", def: "Folkerett er et selvstendig rettssystem som gjelder globalt, uavhengig av nasjonale lover. Folkeretten gjelder både mellom stater og andre rettssubjekter, og inneholder regler om blant annet menneskerettigheter, fred og væpnede konflikter.", cite: "Redaksjonen i Store norske leksikon: folkerett i Store norske leksikon på snl.no.", url: "https://snl.no/folkerett" },
+    { term: "Realisme", def: "«Anarkiforestillingen er et vanlig utgangspunkt i mange teorier om internasjonal politikk, særlig i realismeskolen. Den avspeiler også tanken om at internasjonal politikk er en kamp om makt mellom statene, en av realismens hovedteser.»", cite: "Knudsen, Olav Fagelund: anarki – internasjonal politikk i Store norske leksikon på snl.no.", url: "https://snl.no/anarki_-_internasjonal_politikk" },
+    { term: "Liberalt demokrati", def: "«Liberalt demokrati er en styreform der folkevalgte politikere styrer innenfor rammene av en konstitusjon. De som vinner den politiske makten gjennom valg, er likevel bundet av lover som sikrer rettigheter for de enkelte innbyggerne og for det politiske mindretallet.»", cite: "Tjernshaugen, Andreas: liberalt demokrati i Store norske leksikon på snl.no.", url: "https://snl.no/liberalt_demokrati" },
+    { term: "Autoritarisme", def: "«Autoritarianisme er et system med dikterende makt- eller autoritetsutøvelse, der maktutøvelsen i stor grad baseres på avskrekking (straffetrusler). Autoritær maktutøvelse har ofte en interessepreget basis, som når en person eller gruppe bruker makten for å fremme egne interesser.»", cite: "Redaksjonen i Store norske leksikon: autoritarianisme i Store norske leksikon på snl.no.", url: "https://snl.no/autoritarianisme" },
+    { term: "Proporsjonalitet", def: "«Proporsjonalitetsprinsippet er et grunnleggende prinsipp i krigens folkerett som innebærer at et angrep mot et ellers lovlig militært mål likevel er ulovlig hvis det forventes å forårsake overdreven skade på sivile personer eller gjenstander.»", cite: "Larsen, Kjetil Mujezinović; Cooper, Camilla Guldahl: proporsjonalitetsprinsippet - krigens folkerett i Store norske leksikon på snl.no.", url: "https://snl.no/proporsjonalitetsprinsippet_-_krigens_folkerett" },
+    { term: "Hypotese", def: "«Hypotese er en gjetning, antagelse eller forklaring som synes rimelig ut fra foreliggende kunnskap, og som man forsøker å avkrefte eller bekrefte.»", cite: "Redaksjonen i Store norske leksikon: hypotese i Store norske leksikon på snl.no.", url: "https://snl.no/hypotese" },
+    { term: "Kausalitet", def: "«Kausalitet kommer fra latinsk «causa», som betyr årsak eller grunn, og brukes om en årsakssammenheng, det vil si når det foreligger et påvirkningsforhold mellom to fenomener.»", cite: "Dahlum, Sirianne; Grønmo, Sigmund: kausalitet i Store norske leksikon på snl.no.", url: "https://snl.no/kausalitet" },
+    { term: "Lobbyisme", def: "«Lobbyvirksomhet er en aktivitet som innebærer at interesseorganisasjoner, bedrifter, pressgrupper og enkeltpersoner forsøker å påvirke folkevalgte politikere og andre beslutningstakere i staten.»", cite: "Thorsen, Dag Einar: lobbyvirksomhet i Store norske leksikon på snl.no.", url: "https://snl.no/lobbyvirksomhet" },
+    { term: "Velgeratferd", def: "«Velgeradferd er en betegnelse på hvordan velgerne går til valg og avgir sine stemmer i et demokrati.»", cite: "Aardal, Bernt: velgeradferd i Store norske leksikon på snl.no.", url: "https://snl.no/velgeradferd" },
+    { term: "Urfolk", def: "«Urfolk er et folk med tilhold i en region fra før denne ble kolonisert av eller innlemmet i en stat dominert av andre folkegrupper. Det finnes ingen allment godtatt definisjon av begrepet urfolk.»", cite: "Redaksjonen i Store norske leksikon: urfolk i Store norske leksikon på snl.no.", url: "https://snl.no/urfolk" },
+    { term: "Sametinget", def: "«Sametinget ble oppretta i henhold til sameloven av 12. juni 1987, og ble åpna i 1989. Institusjonen avløste Norsk Sameråd, som hadde eksistert fra 1964 til 1989.»", cite: "Redaksjonen i Store norske leksikon: Sametinget i Store norske leksikon på snl.no.", url: "https://snl.no/Sametinget" },
+    { term: "Ratifisering", def: "«Ratifikasjon er det at en stat forplikter seg til å følge, og dermed blir part til, en folkerettslig (mellomstatlig) avtale. Det kan dreie seg om en traktat, en konvensjon, en pakt, eller en annen form for folkerettslig avtale.»", cite: "Redaksjonen i Store norske leksikon: ratifikasjon i Store norske leksikon på snl.no.", url: "https://snl.no/ratifikasjon" },
+    { term: "Universalitet", def: "«Menneskerettigheter er de rettigheter og friheter ethvert menneske har i kraft av å være menneske. Disse rettighetene er uavhengig av for eksempel kjønn, klasse eller etnisitet.»", cite: "Strand, Vibeke Blaker; Nystuen, Gro: menneskerettigheter i Store norske leksikon på snl.no.", url: "https://snl.no/menneskerettigheter" },
+    { term: "Sikkerhetspolitikk", def: "«Sikkerhetspolitikk er de tiltak en stats regjering iverksetter for å beskytte landets territorium, konstitusjonelle system, regjeringens handlefrihet og befolkningens trygghet og velferd mot et bredt spektrum av farer.»", cite: "Knudsen, Olav Fagelund: sikkerhetspolitikk i Store norske leksikon på snl.no.", url: "https://snl.no/sikkerhetspolitikk" },
+    { term: "NGO", def: "«NGO er en forkortelse for det engelske begrepet Non-Governmental Organisation, og er en samlebetegnelse på ikke-statlige, frivillige organisasjoner, inkludert nærings- og fagorganisasjoner.»", cite: "Redaksjonen i Store norske leksikon: NGO i Store norske leksikon på snl.no.", url: "https://snl.no/NGO_-_ikke-statlig_organisasjon" },
+    { term: "Bærekraftig utvikling", def: "«Bærekraftig utvikling er en utvikling som tilfredsstiller dagens behov uten å ødelegge fremtidige generasjoners muligheter til å tilfredsstille sine behov.»", cite: "Hovden, Eivind; Langhelle, Oluf: bærekraftig utvikling i Store norske leksikon på snl.no.", url: "https://snl.no/b%C3%A6rekraftig_utvikling" },
+  ];
+
+  document.getElementById('modal-title').textContent = "Begrepsbank – Politikk og menneskerettigheter";
+  document.getElementById('modal-body').innerHTML = `
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:1.25rem;">Klikk på et begrep for å se definisjonen. Lær disse grundig – de er sentrale for alle kompetansemålene.</p>
+    <div class="concept-grid">
+      ${concepts.map(c => `
+        <div class="concept-card" onclick="this.classList.toggle('open')">
+          <h4>${c.term}</h4>
+          <div class="concept-body">
+            <p>${c.def}</p>
+            ${c.cite ? `<p class="snl-cite"><em>${c.cite}</em> <a href="${c.url}" target="_blank" rel="noopener">Hentet fra ${c.url}</a></p>` : ''}
+          </div>
+        </div>
+      `).join('')}
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);margin-top:1rem;text-align:center;">Klikk for å toggle definisjon</p>
+  `;
+  openModal();
+}
+
+
+// ===== MODULE KEYWORDS EXPAND =====
+function toggleKeywords(id, btn) {
+  const el = document.getElementById('kw-' + id);
+  const open = el.classList.toggle('open');
+  btn.textContent = (open ? '▾ ' : '▸ ') + 'Nøkkelbegreper';
+}
+
+// ===== QUIZ PROGRESS =====
+const QUIZ_PROGRESS_KEY = 'pos0502_quiz_progress';
+
+function saveQuizProgress(quizId, score, total) {
+  try {
+    const raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
+    const data = raw ? JSON.parse(raw) : {};
+    const pct = Math.round((score / total) * 100);
+    if (!data[quizId] || pct > data[quizId].best) {
+      data[quizId] = { best: pct, score, total, date: new Date().toISOString() };
+      localStorage.setItem(QUIZ_PROGRESS_KEY, JSON.stringify(data));
+    }
+    renderModuleProgress();
+  } catch(e) {}
+}
+
+function renderModuleProgress() {
+  try {
+    const raw = localStorage.getItem(QUIZ_PROGRESS_KEY);
+    const data = raw ? JSON.parse(raw) : {};
+    const map = {
+      'prog-m1': 'metode',
+      'prog-m2': 'demokrati',
+      'prog-m3': 'makt',
+      'prog-m4': 'norskpol',
+      'prog-m5': 'menneskerett',
+      'prog-m6': 'internasjonal'
+    };
+    for (const [prefix, qid] of Object.entries(map)) {
+      const fill = document.getElementById(prefix + '-fill');
+      const txt = document.getElementById(prefix + '-txt');
+      if (!fill || !txt) continue;
+      if (data[qid]) {
+        fill.style.width = data[qid].best + '%';
+        txt.textContent = data[qid].best + '%';
+      } else {
+        fill.style.width = '0%';
+        txt.textContent = '–';
+      }
+    }
+  } catch(e) {}
+}
+
+document.addEventListener('DOMContentLoaded', renderModuleProgress);
+
+
+function openMatching() {
+  const allConcepts = [
+    { term: "Statssuverenitet", def: "Suverenitet er retten et lands myndigheter har til å styre over eget folk og territorium, og til å representere landet i møte med andre land." },
+    { term: "Demokrati", def: "Demokrati, også kalt folkestyre, er en styreform der folket, forstått som landets voksne innbyggere, velger representanter som utformer lovene og tar viktige politiske beslutninger." },
+    { term: "Parlamentarisme", def: "Parlamentarisme er det prinsipp at regjeringen skal utgå fra og stå ansvarlig overfor nasjonalforsamlingen." },
+    { term: "Maktfordelingsprinsippet", def: "Maktfordelingsprinsippet, eller bare maktfordeling, er et politisk og juridisk prinsipp som går ut på at statsmakten skal fordeles på tre uavhengige institusjoner: en lovgivende, en utøvende og en dømmende makt." },
+    { term: "Folkerett", def: "Folkerett er et selvstendig rettssystem som gjelder globalt, uavhengig av nasjonale lover. Folkeretten gjelder både mellom stater og andre rettssubjekter, og inneholder regler om blant annet menneskerettigheter, fred og væpnede konflikter." },
+    { term: "Non-refoulement", def: "Non refoulement-prinsippet innebærer at ingen kan sende en person tilbake til sitt hjemland om han risikerer å bli forfulgt der. Prinsippet står i flyktningekonvensjonen og gjelder dermed for de aller fleste land i verden." },
+    { term: "Realpolitikk", def: "Realpolitikk er en betegnelse for en politikk hvor målet er preget av egeninteressen og virkemidlene velges ut fra rene hensiktsmessighetsvurderinger." },
+    { term: "Soft power", def: "Soft power (myk makt) er en stats internasjonale innflytelse på andre måter enn militærmakt og pengemakt. Begrepet ble utviklet av den amerikanske statsviteren Joseph Nye, og inkluderer virkemidler som kultur, diplomati og bistand." },
+    { term: "Hard power", def: "Hard power (hard makt) er en stats bruk av militær og økonomisk makt for å påvirke andre staters adferd, gjennom tvang, sanksjoner eller trusler. Det er motsatsen til soft power." },
+    { term: "Multilateral avtale", def: "Multilateral avtale er en avtale mellom tre eller flere parter, som oftest land, til forskjell fra bilateral, tosidig." },
+    { term: "Vetoretten", def: "Å ha vetorett betyr å ha rett til å blokkere eller utsette et vedtak eller en beslutning. Ordet veto kommer fra latin og betyr 'jeg forbyr'." },
+    { term: "Medborgerskap", def: "Medborgerskap er en betegnelse som i samfunnsvitenskap brukes om en tilstand der en person blir regnet og med rette kan regne seg selv som et fullverdig medlem av samfunnet. Utenforskap eller marginalisering kan i noen tilfeller brukes som antonymer til medborgerskap." },
+    { term: "Korporatisme", def: "Korporatisme er en styreform hvor den politiske makten springer ut av en (eller flere) forsamling(er) som er rekruttert fra korporasjoner." },
+    { term: "R2P", def: "R2P er en forkortelse for det engelske Responsibility to protect, på norsk «ansvar for å beskytte», som er en lære om statens og det internasjonale samfunnets ansvar for å beskytte sivilbefolkningen mot grove menneskerettighetskrenkelser." },
+    { term: "Sperregrense", def: "Sperregrense er i Norge prosentandelen av avgitte stemmer et parti må oppnå for å bli tildelt utjevningsmandater. Sperregrensen er fire prosent og gjelder bare ved stortingsvalg." },
+    { term: "Illiberal demokrati", def: "Begrepet illiberale demokratier brukes for å beskrive et styresett hvor politiske ledere blir valgt av folket gjennom hovedsakelig frie flerpartivalg, men hvor rettsstaten svekkes og sivile rettigheter, som ytrings- og organisasjonsfrihet, blir kraftig begrenset." },
+    { term: "Realisme", def: "Anarkiforestillingen er et vanlig utgangspunkt i mange teorier om internasjonal politikk, særlig i realismeskolen. Den avspeiler også tanken om at internasjonal politikk er en kamp om makt mellom statene, en av realismens hovedteser." },
+    { term: "Liberalt demokrati", def: "Liberalt demokrati er en styreform der folkevalgte politikere styrer innenfor rammene av en konstitusjon. De som vinner den politiske makten gjennom valg, er likevel bundet av lover som sikrer rettigheter for de enkelte innbyggerne og for det politiske mindretallet." },
+    { term: "Autoritarisme", def: "Autoritarianisme er et system med dikterende makt- eller autoritetsutøvelse, der maktutøvelsen i stor grad baseres på avskrekking (straffetrusler). Autoritær maktutøvelse har ofte en interessepreget basis, som når en person eller gruppe bruker makten for å fremme egne interesser." },
+    { term: "Proporsjonalitet", def: "Proporsjonalitetsprinsippet er et grunnleggende prinsipp i krigens folkerett som innebærer at et angrep mot et ellers lovlig militært mål likevel er ulovlig hvis det forventes å forårsake overdreven skade på sivile personer eller gjenstander." },
+    { term: "Hypotese", def: "Hypotese er en gjetning, antagelse eller forklaring som synes rimelig ut fra foreliggende kunnskap, og som man forsøker å avkrefte eller bekrefte." },
+    { term: "Kausalitet", def: "Kausalitet kommer fra latinsk «causa», som betyr årsak eller grunn, og brukes om en årsakssammenheng, det vil si når det foreligger et påvirkningsforhold mellom to fenomener." },
+    { term: "Lobbyisme", def: "Lobbyvirksomhet er en aktivitet som innebærer at interesseorganisasjoner, bedrifter, pressgrupper og enkeltpersoner forsøker å påvirke folkevalgte politikere og andre beslutningstakere i staten." },
+    { term: "Velgeratferd", def: "Velgeradferd er en betegnelse på hvordan velgerne går til valg og avgir sine stemmer i et demokrati." },
+    { term: "Urfolk", def: "Urfolk er et folk med tilhold i en region fra før denne ble kolonisert av eller innlemmet i en stat dominert av andre folkegrupper. Det finnes ingen allment godtatt definisjon av begrepet urfolk." },
+    { term: "Sametinget", def: "Sametinget ble oppretta i henhold til sameloven av 12. juni 1987, og ble åpna i 1989. Institusjonen avløste Norsk Sameråd, som hadde eksistert fra 1964 til 1989." },
+    { term: "Ratifisering", def: "Ratifikasjon er det at en stat forplikter seg til å følge, og dermed blir part til, en folkerettslig (mellomstatlig) avtale. Det kan dreie seg om en traktat, en konvensjon, en pakt, eller en annen form for folkerettslig avtale." },
+    { term: "Universalitet", def: "Menneskerettigheter er de rettigheter og friheter ethvert menneske har i kraft av å være menneske. Disse rettighetene er uavhengig av for eksempel kjønn, klasse eller etnisitet." },
+    { term: "Sikkerhetspolitikk", def: "Sikkerhetspolitikk er de tiltak en stats regjering iverksetter for å beskytte landets territorium, konstitusjonelle system, regjeringens handlefrihet og befolkningens trygghet og velferd mot et bredt spektrum av farer." },
+    { term: "NGO", def: "NGO er en forkortelse for det engelske begrepet Non-Governmental Organisation, og er en samlebetegnelse på ikke-statlige, frivillige organisasjoner, inkludert nærings- og fagorganisasjoner." },
+    { term: "Bærekraftig utvikling", def: "Bærekraftig utvikling er en utvikling som tilfredsstiller dagens behov uten å ødelegge fremtidige generasjoners muligheter til å tilfredsstille sine behov." },
+  ];
+
+  // Pick 8 random concepts for this round
+  const shuffled = [...allConcepts].sort(() => Math.random() - 0.5);
+  const round = shuffled.slice(0, 8);
+  const defs = [...round].sort(() => Math.random() - 0.5);
+
+  let selectedTerm = null;
+  let selectedDef = null;
+  let matched = 0;
+  const total = round.length;
+
+  function render() {
+    document.getElementById('modal-title').textContent = "Koble begrep til definisjon";
+    document.getElementById('modal-body').innerHTML = `
+      <div class="match-score">Riktige koblinger: <span id="match-count">${matched}</span> / ${total}</div>
+      <div class="match-grid">
+        <div class="match-col">
+          <div class="match-col-label">Begrep</div>
+          ${round.map((c, i) => `
+            <div class="match-item" id="term-${i}" data-index="${i}" onclick="matchClick('term', ${i})">${c.term}</div>
+          `).join('')}
+        </div>
+        <div class="match-col">
+          <div class="match-col-label">Definisjon</div>
+          ${defs.map((c, i) => `
+            <div class="match-item" id="def-${i}" data-term="${round.findIndex(r => r.term === c.term)}" onclick="matchClick('def', ${i})">${_matchBlank(c.term, c.def)}</div>
+          `).join('')}
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--muted);margin-top:1rem;text-align:center;">Klikk et begrep, deretter riktig definisjon</p>
+    `;
+  }
+
+
+  window._matchState = { round, defs, matched, total,
+    selectedTerm: null, selectedDef: null };
+
+  window.matchClick = function(type, index) {
+    const state = window._matchState;
+    const termEl = document.getElementById(`term-${index}`);
+    const defEl = document.getElementById(`def-${index}`);
+
+    if (type === 'term') {
+      if (termEl.classList.contains('matched')) return;
+      // Deselect previous term
+      if (state.selectedTerm !== null) {
+        document.getElementById(`term-${state.selectedTerm}`)?.classList.remove('selected');
+      }
+      state.selectedTerm = index;
+      termEl.classList.add('selected');
+    } else {
+      if (defEl.classList.contains('matched')) return;
+      if (state.selectedDef !== null) {
+        document.getElementById(`def-${state.selectedDef}`)?.classList.remove('selected');
+      }
+      state.selectedDef = index;
+      defEl.classList.add('selected');
+    }
+
+    // Check for match if both selected
+    if (state.selectedTerm !== null && state.selectedDef !== null) {
+      const tEl = document.getElementById(`term-${state.selectedTerm}`);
+      const dEl = document.getElementById(`def-${state.selectedDef}`);
+      const defCorrectTermIndex = parseInt(dEl.dataset.term);
+
+      if (state.selectedTerm === defCorrectTermIndex) {
+        // Correct!
+        tEl.classList.remove('selected');
+        dEl.classList.remove('selected');
+        tEl.classList.add('matched');
+        dEl.classList.add('matched');
+        tEl.style.pointerEvents = 'none';
+        dEl.style.pointerEvents = 'none';
+        state.matched++;
+        document.getElementById('match-count').textContent = state.matched;
+        if (state.matched === state.total) {
+          setTimeout(() => {
+            document.getElementById('modal-body').innerHTML += `
+              <div style="text-align:center;margin-top:1.5rem;padding:1rem;background:#eaf5ef;border-radius:6px;border:1px solid #2d6a4f;">
+                <div style="font-size:1.5rem;margin-bottom:0.4rem;">🎉</div>
+                <div style="font-weight:600;color:#1e4a36;margin-bottom:0.7rem;">Alle ${state.total} begreper koblet riktig!</div>
+                <button class="btn btn-primary" onclick="openMatching()">Ny runde</button>
+              </div>`;
+          }, 300);
+        }
+      } else {
+        // Wrong
+        tEl.classList.add('wrong');
+        dEl.classList.add('wrong');
+        setTimeout(() => {
+          tEl.classList.remove('wrong', 'selected');
+          dEl.classList.remove('wrong', 'selected');
+        }, 600);
+      }
+      state.selectedTerm = null;
+      state.selectedDef = null;
+    }
+  };
+
+  render();
+  openModal();
+}
+
+// ===== MODAL HELPERS =====
+function openModal() {
+  document.getElementById('modal-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModalDirect() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeModal(e) {
+  if (e.target === document.getElementById('modal-overlay')) closeModalDirect();
+}
+
+// ===== TABS =====
+// ===== SPACED REPETITION (SM-2) =====
+const SR_KEY = 'pos0502_sr_data';
+
+function srAllConcepts() {
+  return [
+    { term: "Statssuverenitet", def: "Suverenitet er retten et lands myndigheter har til å styre over eget folk og territorium, og til å representere landet i møte med andre land." },
+    { term: "Demokrati", def: "Demokrati, også kalt folkestyre, er en styreform der folket, forstått som landets voksne innbyggere, velger representanter som utformer lovene og tar viktige politiske beslutnin…" },
+    { term: "Parlamentarisme", def: "Parlamentarisme er det prinsipp at regjeringen skal utgå fra og stå ansvarlig overfor nasjonalforsamlingen." },
+    { term: "Maktfordelingsprinsippet", def: "Maktfordelingsprinsippet, eller bare maktfordeling, er et politisk og juridisk prinsipp som går ut på at statsmakten skal fordeles på tre uavhengige institusjoner: en lovgivende…" },
+    { term: "Non-refoulement", def: "Non refoulement-prinsippet innebærer at ingen kan sende en person tilbake til sitt hjemland om han risikerer å bli forfulgt der. Prinsippet står i …" },
+    { term: "Realpolitikk", def: "Realpolitikk er en betegnelse for en politikk hvor målet er preget av egeninteressen og virkemidlene velges ut fra rene hensiktsmessighetsvurderinger." },
+    { term: "Soft power", def: "Soft power (myk makt) er en stats internasjonale innflytelse på andre måter enn militærmakt og pengemakt." },
+          { term: "Hard power", def: "Hard power (hard makt) er en stats bruk av militær og økonomisk makt for å påvirke andre staters adferd, gjennom tvang, sanksjoner eller trusler." },
+    { term: "Multilateral avtale", def: "Multilateral avtale er en avtale mellom tre eller flere parter, som oftest land, til forskjell fra bilateral, tosidig." },
+    { term: "Vetoretten", def: "Å ha vetorett betyr å ha rett til å blokkere eller utsette et vedtak eller en beslutning. Ordet veto kommer fra latin og betyr jeg forbyr." },
+    { term: "Medborgerskap", def: "Medborgerskap er en betegnelse som i samfunnsvitenskap brukes om en tilstand der en person blir regnet og med rette kan regne seg selv som et fullv…" },
+    { term: "Korporatisme", def: "Korporatisme er en styreform hvor den politiske makten springer ut av en (eller flere) forsamling(er) som er rekruttert fra korporasjoner." },
+    { term: "R2P", def: "R2P er en forkortelse for det engelske Responsibility to protect, på norsk ansvar for å beskytte, som er en lære om statens og det internasjonale s…" },
+    { term: "Sperregrense", def: "Sperregrense er i Norge prosentandelen av avgitte stemmer et parti må oppnå for å bli tildelt utjevningsmandater. Sperregrensen er fire prosent og …" },
+    { term: "Illiberal demokrati", def: "Begrepet illiberale demokratier brukes for å beskrive et styresett hvor politiske ledere blir valgt av folket gjennom hovedsakelig frie flerpartiva…" },
+    { term: "Realisme", def: "Anarkiforestillingen er et vanlig utgangspunkt i mange teorier om internasjonal politikk, særlig i realismeskolen. Den avspeiler også tanken om at internasjonal politikk er en k…" },
+    { term: "Liberalt demokrati", def: "Liberalt demokrati er en styreform der folkevalgte politikere styrer innenfor rammene av en konstitusjon. De som vinner den politiske makten gjenno…" },
+    { term: "Autoritarisme", def: "Autoritarianisme er et system med dikterende makt- eller autoritetsutøvelse, der maktutøvelsen i stor grad baseres på avskrekking (straffetrusler).…" },
+    { term: "Proporsjonalitet", def: "Proporsjonalitetsprinsippet er et grunnleggende prinsipp i krigens folkerett som innebærer at et angrep mot et ellers lovlig militært mål likevel e…" },
+    { term: "Hypotese", def: "Hypotese er en gjetning, antagelse eller forklaring som synes rimelig ut fra foreliggende kunnskap, og som man forsøker å avkrefte eller bekrefte." },
+    { term: "Kausalitet", def: "Kausalitet kommer fra latinsk causa, som betyr årsak eller grunn, og brukes om en årsakssammenheng, det vil si når det foreligger et påvirkningsfor…" },
+    { term: "Lobbyisme", def: "Lobbyvirksomhet er en aktivitet som innebærer at interesseorganisasjoner, bedrifter, pressgrupper og enkeltpersoner forsøker å påvirke folkevalgte politikere og andre beslutning…" },
+    { term: "Velgeratferd", def: "Velgeradferd er en betegnelse på hvordan velgerne går til valg og avgir sine stemmer i et demokrati." },
+    { term: "Urfolk", def: "Urfolk er et folk med tilhold i en region fra før denne ble kolonisert av eller innlemmet i en stat dominert av andre folkegrupper. Det finnes inge…" },
+    { term: "Sametinget", def: "Sametinget ble oppretta i henhold til sameloven av 12. juni 1987, og ble åpna i 1989. Institusjonen avløste Norsk Sameråd, som hadde eksistert fra …" },
+    { term: "Ratifisering", def: "Ratifikasjon er det at en stat forplikter seg til å følge, og dermed blir part til, en folkerettslig (mellomstatlig) avtale. Det kan dreie seg om e…" },
+    { term: "Universalitet", def: "Menneskerettigheter er de rettigheter og friheter ethvert menneske har i kraft av å være menneske. Disse rettighetene er uavhengig av for eksempel kjønn, klasse eller etnisitet." },
+    { term: "Sikkerhetspolitikk", def: "Sikkerhetspolitikk er de tiltak en stats regjering iverksetter for å beskytte landets territorium, konstitusjonelle system, regjeringens handlefrih…" },
+    { term: "NGO", def: "NGO er en forkortelse for det engelske begrepet Non-Governmental Organisation, og er en samlebetegnelse på ikke-statlige, frivillige organisasjoner…" },
+    { term: "Bærekraftig utvikling", def: "Bærekraftig utvikling er en utvikling som tilfredsstiller dagens behov uten å ødelegge fremtidige generasjoners muligheter til å tilfredsstille sine behov." },
+  ];
+}
+
+function srLoadData() {
+  try {
+    const raw = localStorage.getItem(SR_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch(e) { return {}; }
+}
+
+function srSaveData(data) {
+  try { localStorage.setItem(SR_KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+// SM-2: 4-grade Anki-style (0=igjen, 1=vanskelig, 2=bra, 3=enkelt)
+// Maps to SM-2 quality: 0→1, 1→2, 2→4, 3→5
+function sm2Update(card, grade) {
+  const sm2q = [1, 2, 4, 5][grade];
+  if (!card.interval)    card.interval    = 1;
+  if (!card.ef)          card.ef          = 2.5;
+  if (!card.repetitions) card.repetitions = 0;
+
+  if (sm2q < 3) {
+    // Failed — reset
+    card.repetitions = 0;
+    card.interval    = 1;
+  } else {
+    if      (card.repetitions === 0) card.interval = 1;
+    else if (card.repetitions === 1) card.interval = 4;
+    else                             card.interval = Math.round(card.interval * card.ef);
+    card.repetitions++;
+  }
+  card.ef = Math.max(1.3, card.ef + 0.1 - (5 - sm2q) * (0.08 + (5 - sm2q) * 0.02));
+  card.nextDue     = Date.now() + card.interval * 24 * 60 * 60 * 1000;
+  card.lastGrade   = grade;
+  return card;
+}
+
+// Compute next-interval label for each button
+function srNextLabel(card, grade) {
+  const dummy = sm2Update({ interval: card.interval||1, ef: card.ef||2.5, repetitions: card.repetitions||0 }, grade);
+  const d = dummy.interval;
+  if (d <= 1)  return 'I dag';
+  if (d < 7)   return `${d} dager`;
+  if (d < 30)  return `${Math.round(d/7)} uker`;
+  return `${Math.round(d/30)} mnd`;
+}
+
+function srGetDueCards(data, allConcepts) {
+  const now = Date.now();
+  return allConcepts.map(c => {
+    const d = data[c.term] || { interval: 1, ef: 2.5, repetitions: 0, nextDue: 0, lastGrade: null };
+    return { ...c, ...d, isNew: !data[c.term], isDue: !data[c.term] || d.nextDue <= now };
+  });
+}
+
+function srExport() {
+  const data = srLoadData();
+  if (!Object.keys(data).length) {
+    alert('Ingen fremgang å eksportere ennå. Start en økt først!');
+    return;
+  }
+  const payload = JSON.stringify({ version: 1, exported: new Date().toISOString(), cards: data }, null, 2);
+
+  // Try data URI download first
+  try {
+    const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(payload);
+    const a       = document.createElement('a');
+    a.href        = dataUri;
+    a.download    = 'pos0502-fremgang.json';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  } catch(e) {}
+
+  // Always show copy fallback so user can save manually if download was blocked
+  srShowExportFallback(payload);
+}
+
+function srShowExportFallback(payload) {
+  document.getElementById('modal-title').textContent = '⬇ Eksporter fremgang';
+  document.getElementById('modal-body').innerHTML = `
+    <p style="font-size:0.84rem;color:var(--ink);margin-bottom:0.75rem;">
+      Hvis filen ikke ble lastet ned automatisk, kopiér teksten under og lim den inn i en ny fil du kaller <strong>pos0502-fremgang.json</strong>.
+    </p>
+    <textarea id="sr-export-text" readonly style="width:100%;height:160px;font-family:'DM Mono',monospace;font-size:0.72rem;border:1px solid var(--border);border-radius:4px;padding:0.6rem;background:var(--paper);color:var(--ink);resize:vertical;box-sizing:border-box;">${payload}</textarea>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.75rem;">
+      <button class="btn btn-primary" style="justify-content:center;" onclick="
+        const t = document.getElementById('sr-export-text');
+        t.select(); t.setSelectionRange(0,99999);
+        try { document.execCommand('copy'); this.textContent = '✅ Kopiert!'; setTimeout(()=>this.textContent='Kopiér tekst',2000); } catch(e) {}
+      ">Kopiér tekst</button>
+      <button class="btn" style="justify-content:center;" onclick="openSR()">Tilbake</button>
+    </div>
+  `;
+  openModal();
+}
+
+function srImport(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    try {
+      const parsed = JSON.parse(e.target.result);
+      const cards  = parsed.cards || parsed; // støtter både nytt og evt. gammelt format
+      if (typeof cards !== 'object' || Array.isArray(cards)) throw new Error();
+      srSaveData(cards);
+      event.target.value = ''; // reset file input
+      openSR();
+    } catch(err) {
+      alert('Kunne ikke lese filen. Kontroller at det er en gyldig pos0502-fremgang.json-fil.');
+      event.target.value = '';
+    }
+  };
+  reader.readAsText(file);
+}
+
+function openSR() {
+  const all       = srAllConcepts();
+  const data      = srLoadData();
+  const cards     = srGetDueCards(data, all);
+  const due       = cards.filter(c => c.isDue);
+  const done      = cards.filter(c => !c.isDue);
+  const newCount  = due.filter(c => c.isNew).length;
+  const revCount  = due.filter(c => !c.isNew).length;
+
+  const shuffle   = arr => [...arr].sort(() => Math.random() - 0.5);
+  const queue     = [...shuffle(due.filter(c => c.isNew)).slice(0, 10),
+                     ...shuffle(due.filter(c => !c.isNew))];
+
+  const sessionData    = { ...data };
+  const sessionResults = { 0: 0, 1: 0, 2: 0, 3: 0 }; // igjen/vanskelig/bra/enkelt
+
+  function labelFor(c) {
+    if (c.isNew) return { text: 'Ny', bg: '#e8f0ff', color: '#1a3a5c' };
+    if (c.lastGrade === 0 || c.lastGrade === 1) return { text: 'Vanskelig', bg: '#fdecea', color: '#c0392b' };
+    return { text: 'Repetisjon', bg: '#fef9ec', color: '#a07000' };
+  }
+
+  function renderDashboard() {
+    const pct = Math.round((done.length / all.length) * 100);
+    document.getElementById('modal-title').textContent = '🧠 Spaced Repetition – Flashcards';
+    document.getElementById('modal-body').innerHTML = `
+      <div class="sr-stats-grid">
+        <div class="sr-stat-box">
+          <span class="sr-stat-num" style="color:var(--accent2)">${queue.length}</span>
+          <span class="sr-stat-label">Til øving</span>
+        </div>
+        <div class="sr-stat-box">
+          <span class="sr-stat-num" style="color:#2d6a4f">${done.length}</span>
+          <span class="sr-stat-label">Behersket</span>
+        </div>
+        <div class="sr-stat-box">
+          <span class="sr-stat-num" style="color:var(--muted)">${all.length}</span>
+          <span class="sr-stat-label">Totalt</span>
+        </div>
+      </div>
+      <div class="sr-progress-bar"><div class="sr-progress-fill" style="width:${pct}%"></div></div>
+      <p style="font-size:0.78rem;color:var(--muted);text-align:center;margin-bottom:1.25rem;">
+        ${pct}% behersket · ${newCount} nye · ${revCount} til repetisjon
+      </p>
+      ${queue.length === 0
+        ? `<div style="text-align:center;padding:1.5rem;background:#eaf5ef;border-radius:8px;border:1px solid #2d6a4f;">
+             <div style="font-size:2rem;margin-bottom:0.5rem;">🎉</div>
+             <div style="font-weight:700;color:#1e4a36;margin-bottom:0.4rem;">Ingen kort til øving i dag!</div>
+             <p style="font-size:0.82rem;color:#2d6a4f;margin:0;">Kom tilbake i morgen – kortene venter.</p>
+           </div>`
+        : `<button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="srStartSession()">
+             Start øving (${queue.length} kort) →
+           </button>`
+      }
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-top:0.5rem;">
+        <button class="btn" style="justify-content:center;font-size:0.8rem;" onclick="srExport()">⬇ Eksporter fremgang</button>
+        <label class="btn" style="justify-content:center;font-size:0.8rem;cursor:pointer;margin:0;">
+          ⬆ Importer fremgang
+          <input type="file" accept=".json" style="display:none;" onchange="srImport(event)">
+        </label>
+      </div>
+      <div style="margin-top:1.25rem;padding:0.75rem;background:var(--paper);border-radius:6px;font-size:0.75rem;color:var(--muted);line-height:1.6;">
+        <strong style="color:var(--ink);">Slik fungerer det:</strong> Vurder hvert kort etter du har sett definisjonen.
+        <span style="color:#c0392b;">Igjen</span> sender kortet tilbake i køen nå.
+        <span style="color:#a07000;">Vanskelig</span> = 1 dag.
+        <span style="color:#1a6e3c;">Bra</span> = 4 dager.
+        <span style="color:#1a3a5c;">Enkelt</span> = vokser med din EF-faktor.
+        Bruk <strong style="color:var(--ink);">Eksporter</strong> etter en økt for å lagre fremgangen din som fil, og <strong style="color:var(--ink);">Importer</strong> for å laste den inn igjen neste gang.
+      </div>
+    `;
+    window._srSession = { queue, idx: 0, flipped: false, sessionData, sessionResults, labelFor };
+  }
+
+  renderDashboard();
+  openModal();
+}
+
+function srStartSession() { srShowCard(); }
+
+function srShowCard() {
+  const s = window._srSession;
+  if (!s || s.idx >= s.queue.length) { srShowSummary(); return; }
+  const card     = s.queue[s.idx];
+  const lbl      = s.labelFor(card);
+  const progress = Math.round((s.idx / s.queue.length) * 100);
+  s.flipped = false;
+
+  document.getElementById('modal-title').textContent = `Kort ${s.idx + 1} / ${s.queue.length}`;
+  document.getElementById('modal-body').innerHTML = `
+    <div class="sr-progress-bar"><div class="sr-progress-fill" style="width:${progress}%"></div></div>
+    <div class="sr-meta">
+      <span>Trykk på kortet for å snu</span>
+      <span>🔴 ${s.sessionResults[0]} · 🟠 ${s.sessionResults[1]} · 🟢 ${s.sessionResults[2]} · 🔵 ${s.sessionResults[3]}</span>
+    </div>
+    <div class="sr-flip-label">– BEGREP –</div>
+    <div class="sr-card" id="sr-card" onclick="srFlip()">
+      <span class="sr-tag" style="background:${lbl.bg};color:${lbl.color};">${lbl.text}</span>
+      <span class="sr-term">${card.term}</span>
+      <span class="sr-hint">Klikk for å se definisjon</span>
+    </div>
+    <div id="sr-answer-area"></div>
+  `;
+}
+
+function srFlip() {
+  const s = window._srSession;
+  if (!s || s.flipped) return;
+  s.flipped = true;
+  const card = s.queue[s.idx];
+  const n0 = srNextLabel(card, 0);
+  const n1 = srNextLabel(card, 1);
+  const n2 = srNextLabel(card, 2);
+  const n3 = srNextLabel(card, 3);
+
+  document.getElementById('sr-card').innerHTML = `<span class="sr-def">${card.def}</span>`;
+  document.querySelector('.sr-flip-label').textContent = '– DEFINISJON –';
+  document.getElementById('sr-answer-area').innerHTML = `
+    <p style="font-size:0.75rem;color:var(--muted);text-align:center;margin:0.6rem 0 0.4rem;">Hvor godt husket du dette?</p>
+    <div class="sr-buttons">
+      <button class="sr-btn" style="background:#fdecea;color:#c0392b;" onclick="srAnswer(0)">
+        🔴<br><strong>Igjen</strong><br><span style="font-size:0.62rem;font-weight:400;">${n0}</span>
+      </button>
+      <button class="sr-btn" style="background:#fff3e0;color:#c07000;" onclick="srAnswer(1)">
+        🟠<br><strong>Vanskelig</strong><br><span style="font-size:0.62rem;font-weight:400;">${n1}</span>
+      </button>
+      <button class="sr-btn" style="background:#eaf5ef;color:#1a6e3c;" onclick="srAnswer(2)">
+        🟢<br><strong>Bra</strong><br><span style="font-size:0.62rem;font-weight:400;">${n2}</span>
+      </button>
+      <button class="sr-btn" style="background:#e8f0ff;color:#1a3a5c;" onclick="srAnswer(3)">
+        🔵<br><strong>Enkelt</strong><br><span style="font-size:0.62rem;font-weight:400;">${n3}</span>
+      </button>
+    </div>
+  `;
+}
+
+function srAnswer(grade) {
+  const s    = window._srSession;
+  if (!s) return;
+  const card = s.queue[s.idx];
+  const prev = s.sessionData[card.term] || { interval: card.interval||1, ef: card.ef||2.5, repetitions: card.repetitions||0 };
+  const updated = sm2Update({ ...prev }, grade);
+  s.sessionData[card.term] = updated;
+  srSaveData(s.sessionData);
+  s.sessionResults[grade]++;
+  if (grade === 0) {
+    const insertAt = Math.min(s.idx + 5, s.queue.length);
+    s.queue.splice(insertAt, 0, { ...card, ...updated, isNew: false });
+  }
+  s.idx++;
+  srShowCard();
+}
+
+function srShowSummary() {
+  const s     = window._srSession;
+  if (!s) return;
+  const r     = s.sessionResults;
+  const total = r[0]+r[1]+r[2]+r[3];
+  const goodPct = total ? Math.round(((r[2]+r[3]) / total) * 100) : 0;
+  const emoji = goodPct >= 80 ? '🌟' : goodPct >= 50 ? '👍' : '💪';
+
+  document.getElementById('modal-title').textContent = '✅ Økt fullført!';
+  document.getElementById('modal-body').innerHTML = `
+    <div style="text-align:center;margin-bottom:1.4rem;">
+      <div style="font-size:2.5rem;margin-bottom:0.35rem;">${emoji}</div>
+      <div style="font-size:1rem;font-weight:700;color:var(--ink);">Bra jobbet!</div>
+      <div style="font-size:0.82rem;color:var(--muted);">${total} kort gjennomgått · ${goodPct}% bra eller enkelt</div>
+    </div>
+    <div class="sr-stats-grid" style="grid-template-columns:1fr 1fr 1fr 1fr;margin-bottom:1.25rem;">
+      <div class="sr-stat-box"><span class="sr-stat-num" style="color:#c0392b">${r[0]}</span><span class="sr-stat-label">🔴 Igjen</span></div>
+      <div class="sr-stat-box"><span class="sr-stat-num" style="color:#c07000">${r[1]}</span><span class="sr-stat-label">🟠 Vanskelig</span></div>
+      <div class="sr-stat-box"><span class="sr-stat-num" style="color:#1a6e3c">${r[2]}</span><span class="sr-stat-label">🟢 Bra</span></div>
+      <div class="sr-stat-box"><span class="sr-stat-num" style="color:#1a3a5c">${r[3]}</span><span class="sr-stat-label">🔵 Enkelt</span></div>
+    </div>
+    <p style="font-size:0.8rem;color:var(--muted);text-align:center;margin-bottom:1.25rem;">
+      Husk å eksportere fremgangen din før du lukker siden!
+    </p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.5rem;">
+      <button class="btn btn-primary" style="justify-content:center;" onclick="srExport()">⬇ Eksporter fremgang</button>
+      <button class="btn" style="justify-content:center;" onclick="openSR()">Se oversikt</button>
+    </div>
+  `;
+}
+
+// ===== VERBS =====
+function openVerbs() {
+  const verbs = [
+    {
+      verb: "Vurdere",
+      kms: ["KM 01", "KM 09", "KM 10"],
+      taxon: "Høyt nivå",
+      taxonColor: "#c0392b",
+      def: "Du skal veie argumenter, bevis eller perspektiver mot hverandre og komme frem til en begrunnet konklusjon. Vurdering krever at du ikke bare beskriver, men tar stilling – og forklarer grunnlaget for standpunktet.",
+      tips: "Bruk ord som «dette tyder på», «et sterkere argument er», «samlet sett» og «konklusjonen blir».",
+      eksempel: "Vurder i hvilken grad menneskerettighetene faktisk har styrket demokratiet i Norge."
+    },
+    {
+      verb: "Analysere",
+      kms: ["KM 01", "KM 03", "KM 04", "KM 06", "KM 07"],
+      taxon: "Høyt nivå",
+      taxonColor: "#c0392b",
+      def: "Du skal bryte et tema ned i deler, undersøke sammenhenger og forklare årsaker eller mønstre. Analyse går dypere enn beskrivelse – du spør «hvorfor» og «hvordan», ikke bare «hva».",
+      tips: "Del opp problemstillingen i delspørsmål. Bruk fagbegreper og teorier som analytiske verktøy.",
+      eksempel: "Analyser hvorfor velgeratferden i Norge har endret seg siden 1970-tallet."
+    },
+    {
+      verb: "Drøfte",
+      kms: ["KM 05", "KM 06", "KM 07", "KM 08", "KM 11", "KM 12", "KM 13"],
+      taxon: "Høyt nivå",
+      taxonColor: "#c0392b",
+      def: "Du skal presentere og vurdere ulike synspunkter eller tolkninger av et spørsmål, vise at du ser saken fra flere sider, og avslutte med en begrunnet konklusjon. Drøfting er ikke det samme som å liste opp fordeler og ulemper – du må aktivt diskutere dem mot hverandre.",
+      tips: "Strukturer gjerne med «på den ene siden … på den andre siden … samlet sett». Ta ikke bare stilling uten begrunnelse.",
+      eksempel: "Drøft om folkeretten er et effektivt virkemiddel for å løse internasjonale konflikter."
+    },
+    {
+      verb: "Utforske",
+      kms: ["KM 04", "KM 07", "KM 11", "KM 13"],
+      taxon: "Middels nivå",
+      taxonColor: "#c9a84c",
+      def: "Du skal undersøke et tema ved å søke etter informasjon, stille spørsmål og avdekke nyanser og sammenhenger – gjerne med åpenhet for at det ikke finnes ett enkelt svar. Utforsking innebærer aktiv kunnskapsbygging, ikke bare gjengivelse.",
+      tips: "Still åpne spørsmål, undersøk flere kilder og perspektiver, og vis at du er bevisst på kompleksiteten i temaet.",
+      eksempel: "Utforsk hvilke institusjoner som overvåker menneskerettighetene og hvordan de samarbeider."
+    },
+    {
+      verb: "Gjøre rede for",
+      kms: ["KM 05", "KM 12"],
+      taxon: "Grunnleggende nivå",
+      taxonColor: "#2d6a4f",
+      def: "Du skal forklare og beskrive et faglig innhold på en systematisk og presis måte. Dette er et lavere kognitivt krav enn drøfting – du skal vise at du kan stoffet, ikke nødvendigvis ta selvstendig stilling.",
+      tips: "Vær systematisk og faglig presis. Bruk egne ord og unngå å bare ramse opp fakta uten sammenheng.",
+      eksempel: "Gjør rede for maktforholdet mellom Stortinget, regjeringen og domstolene i Norge."
+    },
+    {
+      verb: "Reflektere over",
+      kms: ["KM 03"],
+      taxon: "Middels–høyt nivå",
+      taxonColor: "#c9a84c",
+      def: "Du skal tenke grundig og kritisk over et tema, knytte det til egne erfaringer, verdier eller bredere samfunnsforhold, og vise at du setter spørsmålstegn ved selvfølgeligheter. Refleksjon innebærer en personlig og kritisk dimensjon.",
+      tips: "Ikke bare beskriv – still spørsmål ved premissene. Hva tas for gitt? Hva kunne sett annerledes ut?",
+      eksempel: "Reflekter over hva det innebærer å være medborger i et moderne demokrati."
+    },
+    {
+      verb: "Sammenligne",
+      kms: ["KM 03"],
+      taxon: "Middels nivå",
+      taxonColor: "#c9a84c",
+      def: "Du skal peke på likheter og forskjeller mellom to eller flere fenomener på en systematisk måte. En god sammenligning gjøres langs felles kriterier – ikke bare beskrives fenomenene hver for seg.",
+      tips: "Bruk samme sammenlikningskriterier for begge/alle fenomener. Konkluder med hva likheter/forskjeller forteller oss.",
+      eksempel: "Sammenlign styreformen i Norge og Ungarn med tanke på demokratiets kvalitet."
+    },
+    {
+      verb: "Bruke",
+      kms: ["KM 02", "KM 06"],
+      taxon: "Middels nivå",
+      taxonColor: "#c9a84c",
+      def: "Du skal anvende faglige teorier, metoder eller modeller på konkrete problemstillinger eller empiriske eksempler. «Bruke» krever at du ikke bare kan gjengi teorien, men faktisk demonstrerer at du kan operasjonalisere den.",
+      tips: "Presenter teorien/metoden kort, og vis deretter eksplisitt hvordan den kaster lys over det konkrete eksempelet.",
+      eksempel: "Bruk realismens begreper om maktbalanse for å analysere NATOs rolle i Europa."
+    }
+  ];
+
+  const taxonOrder = { "Grunnleggende nivå": 1, "Middels nivå": 2, "Middels–høyt nivå": 3, "Høyt nivå": 4 };
+  verbs.sort((a, b) => taxonOrder[a.taxon] - taxonOrder[b.taxon]);
+
+  document.getElementById('modal-title').textContent = "Samlede verb i kompetansemålene";
+  document.getElementById('modal-body').innerHTML = `
+    <p style="font-size:0.85rem;color:var(--muted);margin-bottom:0.5rem;">POS05-02 bruker <strong>8 ulike oppgaveverb</strong> fordelt på de 13 kompetansemålene. Å forstå hva hvert verb krever av deg er avgjørende for å svare riktig på prøver og eksamen.</p>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:1.5rem;font-size:0.75rem;">
+      <span style="background:#eaf5ef;color:#2d6a4f;padding:2px 8px;border-radius:3px;border:1px solid #2d6a4f;">● Grunnleggende</span>
+      <span style="background:#fef9ec;color:#a07000;padding:2px 8px;border-radius:3px;border:1px solid #c9a84c;">● Middels</span>
+      <span style="background:#fdecea;color:#c0392b;padding:2px 8px;border-radius:3px;border:1px solid #c0392b;">● Høyt nivå</span>
+    </div>
+    ${verbs.map(v => `
+      <div style="margin-bottom:1.4rem;padding:1rem 1.1rem;border-left:3px solid ${v.taxonColor};background:var(--paper);border-radius:0 6px 6px 0;">
+        <div style="display:flex;align-items:baseline;gap:0.75rem;flex-wrap:wrap;margin-bottom:0.5rem;">
+          <span style="font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--ink);">${v.verb}</span>
+          <span style="font-size:0.7rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:${v.taxonColor};border:1px solid ${v.taxonColor};padding:1px 6px;border-radius:3px;">${v.taxon}</span>
+          <span style="font-size:0.72rem;color:var(--muted);">${v.kms.join(' · ')}</span>
+        </div>
+        <p style="font-size:0.84rem;color:var(--ink);line-height:1.6;margin-bottom:0.5rem;">${v.def}</p>
+        <div style="font-size:0.78rem;color:var(--muted);margin-bottom:0.35rem;"><strong style="color:var(--ink);">💡 Tips:</strong> ${v.tips}</div>
+        <div style="font-size:0.78rem;color:var(--muted);font-style:italic;"><strong style="color:var(--ink);font-style:normal;">Eks:</strong> «${v.eksempel}»</div>
+      </div>
+    `).join('')}
+  `;
+  openModal();
+}
+
+// ===== BYGGEBLOKK =====
+const byggTasks = [
+  {
+    id: 'b1', title: 'Demokrati og dets utfordringer', km: 'KM 03 · KM 12',
+    steps: [
+      { label: 'Definer', q: 'Forklar med egne ord hva demokrati betyr. Hva skiller det fra andre styreformer?',
+        keywords: ['folk','valg','representant','flertall','deltakelse','stemme','folkestyre','makt'],
+        hint: 'Hint: prøv å bruke ord som folk, valg, representant eller flertall.' },
+      { label: 'Eksemplifiser', q: 'Gi et konkret eksempel på en utfordring det norske demokratiet står overfor i dag.',
+        keywords: ['demokrati','norge','norsk','utfordring','problem','trussel','parti','stortinget','tillit','polarisering','desinformasjon','valgdeltakelse'],
+        hint: 'Hint: nevn en konkret utfordring knyttet til det norske demokratiet.' },
+      { label: 'Analyser', q: 'Hvordan henger medborgerskap og demokrati sammen? Bruk minst ett fagbegrep fra pensum.',
+        keywords: ['medborgerskap','rettighet','plikt','deltakelse','demokrati','stemmerett','ytringsfrihet','sivil'],
+        hint: 'Hint: bruk begrepet medborgerskap og koble det til rettigheter eller plikter.' },
+      { label: 'Ta stilling', q: 'Mener du det norske demokratiet er robust nok til å møte disse utfordringene? Begrunn svaret.',
+        keywords: ['mener','tror','fordi','fordi','robust','sterk','svak','grunn','fordi','fordi','mener jeg','jeg mener','standpunkt','konklusjon'],
+        hint: 'Hint: ta et tydelig standpunkt og begrunn det – bruk "jeg mener" eller "fordi".' }
+    ]
+  },
+  {
+    id: 'b2', title: 'Makt og påvirkning i norsk politikk', km: 'KM 05 · KM 06',
+    steps: [
+      { label: 'Definer', q: 'Hva menes med korporatisme? Forklar begrepet med egne ord.',
+        keywords: ['korporatisme','organisasjon','interesseorganisasjon','stat','regjering','samarbeid','beslutning','trepartssamarbeid','fagforening','arbeidsgiverforening'],
+        hint: 'Hint: forklar sammenhengen mellom staten og interesseorganisasjoner.' },
+      { label: 'Eksemplifiser', q: 'Gi et eksempel på hvordan en interesseorganisasjon har påvirket politiske beslutninger i Norge.',
+        keywords: ['lo','nho','landsorganisasjon','fagforening','organisasjon','påvirket','beslutning','norsk','eksempel','forhandling'],
+        hint: 'Hint: nevn en konkret organisasjon, f.eks. LO, NHO eller en bransjeorganisasjon.' },
+      { label: 'Analyser', q: 'Sammenlign lobbyisme og korporatisme som kanaler for politisk innflytelse. Hva er de viktigste forskjellene?',
+        keywords: ['lobbyisme','korporatisme','forskjell','formell','uformell','kanal','innflytelse','sammenlign','til forskjell','mens'],
+        hint: 'Hint: bruk begge begrepene og pek på minst én forskjell mellom dem.' },
+      { label: 'Ta stilling', q: 'Er det problematisk at organiserte interesser har så stor innflytelse i norsk politikk? Drøft kort.',
+        keywords: ['problematisk','demokrati','makt','interesser','fordel','ulempe','mener','fordi','på den ene','på den andre','drøft'],
+        hint: 'Hint: se saken fra to sider og si hva du mener er mest problematisk.' }
+    ]
+  },
+  {
+    id: 'b3', title: 'Menneskerettigheter og statlig suverenitet', km: 'KM 09 · KM 10 · KM 11',
+    steps: [
+      { label: 'Definer', q: 'Hva er folkerett, og hva skiller det fra nasjonal lovgivning?',
+        keywords: ['folkerett','internasjonal','stat','traktat','konvensjon','nasjonal','lov','suverenitet','bindende','forskjell'],
+        hint: 'Hint: forklar hva folkerett er og hva som skiller det fra lover innenfor ett land.' },
+      { label: 'Eksemplifiser', q: 'Gi et eksempel på en situasjon der statssuverenitet og menneskerettigheter har stått i konflikt.',
+        keywords: ['eksempel','konflikt','suverenitet','menneskerettighet','land','stat','intervensjon','brudd','krig','folkemord','ungarn','kina','russland','syria'],
+        hint: 'Hint: nevn et konkret land eller en konkret hendelse der disse to prinsippene kolliderte.' },
+      { label: 'Analyser', q: 'Forklar hva R2P-prinsippet innebærer og hvordan det utfordrer tradisjonell statssuverenitet.',
+        keywords: ['r2p','responsibility','beskytte','ansvar','suverenitet','intervensjon','folkerett','forklar','utfordrer','sikkerhetsrådet'],
+        hint: 'Hint: bruk R2P-begrepet og forklar konkret hvordan det endrer synet på statssuverenitet.' },
+      { label: 'Ta stilling', q: 'Bør det internasjonale samfunnet ha rett til å gripe inn i suverene stater for å beskytte sivile? Begrunn.',
+        keywords: ['bør','mener','rett','gripe inn','sivile','beskytte','fordi','suverenitet','menneskerettighet','standpunkt'],
+        hint: 'Hint: ta et klart standpunkt og begrunn det med et faglig argument.' }
+    ]
+  },
+  {
+    id: 'b4', title: 'Realisme og liberalisme i internasjonal politikk', km: 'KM 04 · KM 13',
+    steps: [
+      { label: 'Definer', q: 'Forklar forskjellen mellom realisme og liberalisme som teorier i internasjonal politikk.',
+        keywords: ['realisme','liberalisme','teori','anarki','makt','samarbeid','institusjon','stat','forskjell','internasjonal'],
+        hint: 'Hint: bruk begge begrepene og pek på minst én sentral forskjell mellom dem.' },
+      { label: 'Eksemplifiser', q: 'Velg én aktuell internasjonal konflikt eller hendelse. Hvordan ville en realist forklare den?',
+        keywords: ['realist','realisme','makt','egeninteresse','stat','anarki','konflikt','forklare','fordi','nasjonal interesse'],
+        hint: 'Hint: nevn en konkret hendelse og forklar den med realistens begreper om makt og egeninteresse.' },
+      { label: 'Analyser', q: 'Hvordan ville en liberalist forklare den samme hendelsen? Hva er de viktigste skillene i forklaringene?',
+        keywords: ['liberalist','liberalisme','institusjon','samarbeid','avhengighet','demokrati','forskjell','skille','til sammenligning','mens realisten'],
+        hint: 'Hint: bruk liberalismens begreper og sammenlign eksplisitt med realistforklaringen.' },
+      { label: 'Ta stilling', q: 'Hvilken teori mener du gir den mest troverdige forklaringen på internasjonal politikk i dag? Begrunn.',
+        keywords: ['mener','teori','realisme','liberalisme','fordi','troverdig','overbevisende','beste','forklarer','eksempel','standpunkt'],
+        hint: 'Hint: velg én teori, si hvorfor du mener den er mest troverdig og bruk et eksempel som støtte.' }
+    ]
+  },
+  {
+    id: 'b5', title: 'Urfolk, minoriteter og politisk innflytelse', km: 'KM 08',
+    steps: [
+      { label: 'Definer', q: 'Hvem regnes som urfolk, og hva skiller urfolksrettigheter fra vanlige minoritetsrettigheter?',
+        keywords: ['urfolk','samer','minoritet','rettighet','ilo','konvensjon','kollektiv','historisk','tilknytning','forskjell'],
+        hint: 'Hint: bruk begrepet urfolk og forklar hva som skiller det fra minoritetsbegrepet.' },
+      { label: 'Eksemplifiser', q: 'Beskriv én konkret rettighet samene har i Norge, og hvilken institusjon som ivaretar den.',
+        keywords: ['sametinget','samer','rettighet','språk','land','ILO','konvensjon','reindrift','kultur','institusjon'],
+        hint: 'Hint: nevn Sametinget eller en konkret rettighet samer har etter norsk lov eller ILO-169.' },
+      { label: 'Analyser', q: 'Hvilke utfordringer møter urfolk og minoriteter når de forsøker å få politisk innflytelse i demokratier?',
+        keywords: ['utfordring','innflytelse','minoritet','urfolk','demokrati','flertall','representasjon','makt','marginalisert','politisk'],
+        hint: 'Hint: diskuter utfordringer knyttet til representasjon og flertallsdemokratiets begrensninger.' },
+      { label: 'Ta stilling', q: 'Mener du at Sametingets nåværende myndighet er tilstrekkelig for å ivareta samiske interesser? Drøft.',
+        keywords: ['sametinget','myndighet','tilstrekkelig','samisk','mener','fordi','for lite','for mye','innflytelse','drøft','standpunkt'],
+        hint: 'Hint: ta stilling til om Sametinget har nok makt og begrunn med et konkret argument.' }
+    ]
+  },
+  {
+    id: 'b6', title: 'Velgeratferd og politisk deltakelse', km: 'KM 06',
+    steps: [
+      { label: 'Definer', q: 'Hva studerer man når man forsker på velgeratferd? Nevn minst to faktorer som påvirker hvordan folk stemmer.',
+        keywords: ['velgeratferd','stemme','valg','klasse','verdier','parti','sakseierskap','identitet','faktor','påvirker'],
+        hint: 'Hint: nevn minst to konkrete faktorer som forklarer velgeratferd, f.eks. klasse, verdier eller sakseierskap.' },
+      { label: 'Eksemplifiser', q: 'Gi et eksempel på en gruppe velgere og forklar hva som kan forklare stemmegivningen deres.',
+        keywords: ['eksempel','gruppe','velger','stemmer','fordi','klasse','alder','ung','eldre','kvinner','arbeider','faktor','forklare'],
+        hint: 'Hint: velg en konkret gruppe (f.eks. unge velgere, arbeiderklasse) og forklar hva som driver stemmegivningen.' },
+      { label: 'Analyser', q: 'Hvordan henger sperregrensen og proporsjonalitetsprinsippet sammen, og hvilke konsekvenser har sperregrensen for velgeratferd?',
+        keywords: ['sperregrense','proporsjonalitet','mandat','konsekvens','stemme','parti','taktisk','valgordning','fire prosent','representasjon'],
+        hint: 'Hint: forklar sperregrensens effekt og bruk proporsjonalitetsbegrepet.' },
+      { label: 'Ta stilling', q: 'Er lav valgdeltakelse blant unge et demokratisk problem? Begrunn standpunktet ditt.',
+        keywords: ['valgdeltakelse','unge','demokrati','problem','mener','fordi','representasjon','deltakelse','standpunkt','bekymring'],
+        hint: 'Hint: ta et klart standpunkt og bruk demokratibegrepet i begrunnelsen.' }
+    ]
+  },
+  {
+    id: 'b7', title: 'Bærekraft, fordeling og global rettferdighet', km: 'KM 07',
+    steps: [
+      { label: 'Definer', q: 'Hva menes med bærekraftig utvikling? Forklar sammenhengen mellom miljø, økonomi og sosial rettferdighet.',
+        keywords: ['bærekraft','bærekraftig','utvikling','miljø','økonomi','sosial','rettferdighet','klima','generasjon','fns'],
+        hint: 'Hint: forklar bærekraftbegrepets tre dimensjoner: miljø, økonomi og det sosiale.' },
+      { label: 'Eksemplifiser', q: 'Gi et eksempel på en dagsaktuell problemstilling knyttet til urettferdig fordeling mellom land.',
+        keywords: ['eksempel','land','fordeling','rik','fattig','nord','sør','klima','ressurs','urettferdig','aktuell'],
+        hint: 'Hint: nevn et konkret eksempel på global urettferdighet, f.eks. klimaansvar, gjeld eller ressursfordeling.' },
+      { label: 'Analyser', q: 'Bruk minst ett statsvitenskapelig begrep for å analysere hvem som har ansvar for å løse globale fordelingsproblemer.',
+        keywords: ['soft power','multilateralisme','folkerett','suverenitet','stat','institusjon','fn','ansvar','analyse','begrep'],
+        hint: 'Hint: bruk et fagbegrep som multilateralisme, folkerett eller soft power og koble det til ansvarsspørsmålet.' },
+      { label: 'Ta stilling', q: 'Har rike land som Norge et særlig ansvar for global bærekraft og fordeling? Drøft.',
+        keywords: ['norge','rik','ansvar','mener','fordi','bærekraft','fordeling','særlig','plikt','historisk','drøft'],
+        hint: 'Hint: drøft fra to sider – hva taler for og mot at Norge har et særlig ansvar?' }
+    ]
+  },
+  {
+    id: 'b8', title: 'Krig, fred og internasjonalt samarbeid', km: 'KM 13',
+    steps: [
+      { label: 'Definer', q: 'Hva er sikkerhetspolitikk, og hvilke virkemidler bruker stater for å ivareta nasjonal sikkerhet?',
+        keywords: ['sikkerhetspolitikk','forsvar','diplomati','allianse','nato','virkemiddel','trussel','militær','rustning','fred'],
+        hint: 'Hint: definer begrepet og nevn minst to konkrete virkemidler som diplomati, militær eller allianser.' },
+      { label: 'Eksemplifiser', q: 'Gi et eksempel på en pågående eller nylig avsluttet internasjonal konflikt og beskriv kort hva den handler om.',
+        keywords: ['konflikt','krig','eksempel','handler om','mellom','land','stat','russland','ukraina','gaza','sudan','kina'],
+        hint: 'Hint: nevn en konkret konflikt og gi en kort, presis beskrivelse av hva den dreier seg om.' },
+      { label: 'Analyser', q: 'Hvilken rolle spiller vetoretten i FNs sikkerhetsråd i konflikten du valgte? Hvilke begrensninger skaper den?',
+        keywords: ['vetoretten','sikkerhetsrådet','fn','blokkere','begrensning','p5','resolusjoner','makt','handlingslammet','rolle'],
+        hint: 'Hint: bruk vetoretten og sikkerhetsrådet eksplisitt og koble det til konflikten du nevnte.' },
+      { label: 'Ta stilling', q: 'Er multilaterale organisasjoner som FN i stand til å håndtere dagens sikkerhetstrusler? Drøft.',
+        keywords: ['fn','multilateral','mener','fordi','håndtere','trussel','svak','sterk','reform','veto','makt','standpunkt','drøft'],
+        hint: 'Hint: drøft FNs styrker og svakheter og ta et begrunnet standpunkt.' }
+    ]
+  }
+];
+
+
+// State: { taskId: { stepIdx, answers: [] } }
+const byggState = {};
+
+function byggInit() {
+  const container = document.getElementById('bygg-card-list');
+  if (!container) return;
+  container.innerHTML = byggTasks.map(t => `
+    <div class="bygg-task" id="bygg-task-${t.id}">
+      <div class="bygg-task-header" onclick="byggToggle('${t.id}')">
+        <div>
+          <div class="bygg-task-title">${t.title}</div>
+          <div class="bygg-progress" id="bygg-prog-${t.id}">0 / ${t.steps.length} steg fullført</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;">
+          <span class="bygg-task-meta">${t.km}</span>
+          <button id="bygg-export-${t.id}" class="bygg-export-btn" disabled onclick="event.stopPropagation();byggExport('${t.id}')" title="Last ned svar som .txt">⬇ Eksporter</button>
+          <span class="bygg-chevron" id="bygg-chev-${t.id}">▼</span>
+        </div>
+      </div>
+      <div class="bygg-task-body" id="bygg-body-${t.id}" style="display:none;">
+        ${t.steps.map((s, i) => byggStepHTML(t.id, i, s, 0)).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function byggStepHTML(taskId, stepIdx, step, currentStep) {
+  const state   = byggState[taskId] || { stepIdx: 0, answers: [] };
+  const done    = stepIdx < state.stepIdx;
+  const active  = stepIdx === state.stepIdx;
+  const locked  = stepIdx > state.stepIdx;
+  const answer  = state.answers[stepIdx] || '';
+  const stepNum = stepIdx + 1;
+  const total   = byggTasks.find(t => t.id === taskId).steps.length;
+
+  let cls = locked ? 'bygg-step locked' : done ? 'bygg-step done' : 'bygg-step active';
+
+  if (done) {
+    return `<div class="${cls}" id="bygg-step-${taskId}-${stepIdx}">
+      <div class="bygg-step-label">Steg ${stepNum} – ${step.label} ✓</div>
+      <div class="bygg-step-question">${step.q}</div>
+      <div class="bygg-answer-display">${answer}</div>
+    </div>`;
+  }
+  if (locked) {
+    return `<div class="${cls}" id="bygg-step-${taskId}-${stepIdx}">
+      <div class="bygg-step-label">Steg ${stepNum} – ${step.label}</div>
+      <div class="bygg-step-question">${step.q}</div>
+    </div>`;
+  }
+  // active
+  return `<div class="${cls}" id="bygg-step-${taskId}-${stepIdx}">
+    <div class="bygg-step-label">Steg ${stepNum} / ${total} – ${step.label}</div>
+    <div class="bygg-step-question">${step.q}</div>
+    <textarea id="bygg-ta-${taskId}-${stepIdx}" placeholder="Skriv svaret ditt her…" oninput="byggCheck('${taskId}', ${stepIdx})">${answer}</textarea>
+    <div id="bygg-feedback-${taskId}-${stepIdx}" class="bygg-feedback" style="display:none"></div>
+    <div class="bygg-step-footer">
+      <span id="bygg-count-${taskId}-${stepIdx}">0 / 40 tegn</span>
+      <button id="bygg-btn-${taskId}-${stepIdx}" disabled onclick="byggNext('${taskId}', ${stepIdx})">Neste steg →</button>
+    </div>
+  </div>`;
+}
+
+function byggToggle(taskId) {
+  const body = document.getElementById(`bygg-body-${taskId}`);
+  const chev = document.getElementById(`bygg-chev-${taskId}`);
+  const open = body.style.display === 'none';
+  body.style.display = open ? 'block' : 'none';
+  chev.classList.toggle('open', open);
+  if (open) byggRender(taskId);
+}
+
+function byggRender(taskId) {
+  const task  = byggTasks.find(t => t.id === taskId);
+  const state = byggState[taskId] || { stepIdx: 0, answers: [] };
+  byggState[taskId] = state;
+  const body  = document.getElementById(`bygg-body-${taskId}`);
+  const done  = state.stepIdx >= task.steps.length;
+
+  body.innerHTML = task.steps.map((s, i) => byggStepHTML(taskId, i, s, state.stepIdx)).join('');
+
+  if (done) {
+    body.innerHTML += `<div class="bygg-complete">
+      <strong>🎉 Alle steg fullført!</strong>
+      Du har nå bygget opp et komplett faglig argument om «${task.title}». Les gjennom svaret ditt – er det logisk sammenheng mellom stegene?
+    </div>`;
+  }
+  byggUpdateProgress(taskId);
+}
+
+function byggCheckKeywords(text, keywords) {
+  const lower = text.toLowerCase();
+  return keywords.filter(kw => lower.includes(kw.toLowerCase()));
+}
+
+function byggCheck(taskId, stepIdx) {
+  const ta       = document.getElementById(`bygg-ta-${taskId}-${stepIdx}`);
+  const btn      = document.getElementById(`bygg-btn-${taskId}-${stepIdx}`);
+  const cnt      = document.getElementById(`bygg-count-${taskId}-${stepIdx}`);
+  const feedback = document.getElementById(`bygg-feedback-${taskId}-${stepIdx}`);
+  const text     = ta.value.trim();
+  const len      = text.length;
+  const task     = byggTasks.find(t => t.id === taskId);
+  const step     = task.steps[stepIdx];
+  const keywords = step.keywords || [];
+
+  cnt.textContent = `${len} tegn`;
+
+  if (len < 40) {
+    cnt.style.color = 'var(--muted)';
+    btn.disabled = true;
+    feedback.style.display = 'none';
+    return;
+  }
+
+  const hits = byggCheckKeywords(text, keywords);
+  const ok   = hits.length >= 1;
+
+  if (ok) {
+    feedback.style.display = 'block';
+    feedback.className = 'bygg-feedback bygg-feedback-ok';
+    feedback.innerHTML = `✅ Bra – du bruker relevante fagbegreper (${hits.slice(0,3).join(', ')}). Du kan gå videre.`;
+    cnt.style.color = '#2d6a4f';
+    btn.disabled = false;
+  } else {
+    feedback.style.display = 'block';
+    feedback.className = 'bygg-feedback bygg-feedback-warn';
+    feedback.innerHTML = `⚠️ Svaret mangler faglige begreper. ${step.hint}`;
+    cnt.style.color = '#b5451b';
+    btn.disabled = true;
+  }
+}
+
+function byggNext(taskId, stepIdx) {
+  const ta     = document.getElementById(`bygg-ta-${taskId}-${stepIdx}`);
+  const answer = ta.value.trim();
+  const task   = byggTasks.find(t => t.id === taskId);
+  const step   = task.steps[stepIdx];
+  const hits   = byggCheckKeywords(answer, step.keywords || []);
+  if (answer.length < 40 || hits.length < 1) return;
+  if (!byggState[taskId]) byggState[taskId] = { stepIdx: 0, answers: [] };
+  byggState[taskId].answers[stepIdx] = answer;
+  byggState[taskId].stepIdx = stepIdx + 1;
+  byggRender(taskId);
+  const nextEl = document.getElementById(`bygg-step-${taskId}-${stepIdx + 1}`);
+  if (nextEl) setTimeout(() => nextEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+}
+
+function byggUpdateProgress(taskId) {
+  const task  = byggTasks.find(t => t.id === taskId);
+  const state = byggState[taskId] || { stepIdx: 0 };
+  const done  = Math.min(state.stepIdx, task.steps.length);
+  const total = task.steps.length;
+  document.getElementById(`bygg-prog-${taskId}`).textContent =
+    `${done} / ${total} steg fullført`;
+  const btn = document.getElementById(`bygg-export-${taskId}`);
+  if (btn) btn.disabled = done < total;
+}
+
+function byggExport(taskId) {
+  const task  = byggTasks.find(t => t.id === taskId);
+  const state = byggState[taskId] || { answers: [] };
+  const dato  = new Date().toLocaleDateString('nb-NO');
+  const stamp = 'Gulrotkake';
+  let txt = `SKRIVEVERKSTED – ${task.title}\n`;
+  txt += `Kompetansemål: ${task.km}\n`;
+  txt += `Dato: ${dato}\n`;
+  txt += '='.repeat(52) + '\n\n';
+  task.steps.forEach((step, i) => {
+    txt += `Steg ${i+1} – ${step.label}\n`;
+    txt += `${step.q}\n\n`;
+    txt += (state.answers[i] || '').trim() + '\n\n';
+    txt += '-'.repeat(40) + '\n\n';
+  });
+  txt += `\n[${stamp}]`;
+  const blob = new Blob([txt], { type: 'text/plain;charset=utf-8' });
+  const url  = URL.createObjectURL(blob);
+  const a    = document.createElement('a');
+  a.href     = url;
+  a.download = `skriveverksted-${taskId}-${dato.replace(/\./g,'-')}.txt`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+// Init on tab switch
+const _origSwitchTab = typeof switchTab === 'function' ? switchTab : null;
+
+function _matchBlank(term, def) {
+  const blanks = {'Statssuverenitet': ['Suverenitet'], 'Demokrati': ['Demokrati'], 'Parlamentarisme': ['Parlamentarisme'], 'Maktfordelingsprinsippet': ['Maktfordelingsprinsippet, eller bare maktfordeling,'], 'Non-refoulement': ['Non refoulement-prinsippet'], 'Realpolitikk': ['Realpolitikk'], 'Soft power': ['Soft power (myk makt)'], 'Hard power': ['Hard power (hard makt)'], 'Multilateral avtale': ['Multilateral avtale'], 'Vetoretten': ['vetorett', 'Å ha vetorett'], 'Medborgerskap': ['Medborgerskap'], 'Korporatisme': ['Korporatisme'], 'R2P': ['R2P er en forkortelse for det engelske Responsibility to protect'], 'Sperregrense': ['Sperregrense'], 'Illiberal demokrati': ['Begrepet illiberale demokratier brukes'], 'Folkerett': ['Folkerett er', 'Folkeretten'], 'Liberalt demokrati': ['Liberalt demokrati'], 'Autoritarisme': ['Autoritarianisme'], 'Proporsjonalitet': ['Proporsjonalitetsprinsippet'], 'Hypotese': ['Hypotese'], 'Kausalitet': ['Kausalitet kommer fra latinsk «causa»'], 'Lobbyisme': ['Lobbyvirksomhet'], 'Velgeratferd': ['Velgeradferd'], 'Urfolk': ['Urfolk'], 'Sametinget': ['Sametinget'], 'Ratifisering': ['Ratifikasjon'], 'Sikkerhetspolitikk': ['Sikkerhetspolitikk'], 'NGO': ['NGO er en forkortelse for det engelske begrepet Non-Governmental Organisation'], 'Bærekraftig utvikling': ['Bærekraftig utvikling']};
+  const repls = {'Statssuverenitet': ['...'], 'Demokrati': ['...'], 'Parlamentarisme': ['...'], 'Maktfordelingsprinsippet': ['...,'], 'Non-refoulement': ['...-prinsippet'], 'Realpolitikk': ['...'], 'Soft power': ['... (myk makt)'], 'Hard power': ['... (hard makt)'], 'Multilateral avtale': ['...'], 'Vetoretten': ['...', 'Å ha ...'], 'Medborgerskap': ['...'], 'Korporatisme': ['...'], 'R2P': ['... er en forkortelse for det engelske Responsibility to protect'], 'Sperregrense': ['...'], 'Illiberal demokrati': ['Begrepet ... brukes'], 'Folkerett': ['... er', '...'], 'Liberalt demokrati': ['...'], 'Autoritarisme': ['...'], 'Proporsjonalitet': ['...-prinsippet'], 'Hypotese': ['...'], 'Kausalitet': ['... kommer fra latinsk «causa»'], 'Lobbyisme': ['...'], 'Velgeratferd': ['...'], 'Urfolk': ['...'], 'Sametinget': ['...'], 'Ratifisering': ['...'], 'Sikkerhetspolitikk': ['...'], 'NGO': ['... er en forkortelse for det engelske begrepet Non-Governmental Organisation'], 'Bærekraftig utvikling': ['...']};
+  if (blanks[term]) {
+    let d = def;
+    blanks[term].forEach((from, i) => {
+      // Match with optional leading « 
+      d = d.replace(new RegExp('(«?)' + from.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'), 'g'), '$1' + repls[term][i]);
+    });
+    return d;
+  }
+  return def;
+}
+
+
+function switchTab(id, btn) {
+  document.querySelectorAll('.activity-panel').forEach(p => {
+    p.classList.remove('active');
+    p.style.display = '';
+  });
+  document.querySelectorAll('.activity-tab').forEach(t => t.classList.remove('active'));
+  const panel = document.getElementById('tab-' + id);
+  if (id === 'satire' || id === 'bygg') {
+    panel.style.display = 'block';
+  } else {
+    panel.classList.add('active');
+  }
+  btn.classList.add('active');
+  if (id === 'bygg') byggInit();
+  if ((id === 'debate' || id === 'satire') && !document.getElementById('satire-grid').children.length) satireNew();
+}
+
+
+
+// ===== SCROLL ANIMATIONS =====
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Keyboard close
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModalDirect();
+});
+
+
+// ── SATIRE QUIZ ────────────────────────────────────────────
+const SATIRE_ITEMS = [
+  // EKTE – verifiserte saker med norske lenker
+  {
+    headline: "Stortinget vedtar \u00e5 utrede lobbyregister etter 25 \u00e5r",
+    source: "NRK Norge",
+    type: "ekte",
+    url: "https://www.nrk.no/norge/hoyre-og-ap-snur---sikrer-flertall-for-lobbyregister-1.17784771",
+    explain: "I februar 2026 fikk forslaget om \u00e5 utrede et lobbyregister flertall p\u00e5 Stortinget \u2013 etter 25 \u00e5r og ni fors\u00f8k fra Venstre. Norge er ett av f\u00e5 demokratier uten lovfestet lobbyregister."
+  },
+  {
+    headline: "Demokratiet er p\u00e5 tilbakegang i verden \u2013 19. \u00e5r p\u00e5 rad",
+    source: "NRK Nyheter / Freedom House",
+    type: "ekte",
+    url: "https://www.nrk.no/nyheter/rapport_-demokratiet-er-pa-tilbakegang-i-verden-1.16200993",
+    explain: "Freedom Houses \u00e5rsrapport dokumenterer at politiske rettigheter og sivile friheter har forverret seg globalt i mange \u00e5r p\u00e5 rad. NRK omtaler funnene p\u00e5 norsk."
+  },
+  {
+    headline: "Ungarn kan blokkere for Ukrainas EU-forhandlinger",
+    source: "NRK Urix",
+    type: "ekte",
+    url: "https://www.nrk.no/urix/ungarn-kan-blokkere-for-ukrainas-eu-forhandlinger-1.16677887",
+    explain: "Ungarn under Viktor Orb\u00e1n brukte sin vetorett til gjentatte ganger \u00e5 blokkere b\u00e5de EU-medlemskapsforhandlinger og milliard-hjelp til Ukraina \u2013 et konkret eksempel p\u00e5 at ett land kan lamme multilateralt samarbeid."
+  },
+  {
+    headline: "S\u00f8r-Koreas president opphever unntakstilstanden etter press",
+    source: "NRK Urix",
+    type: "ekte",
+    url: "https://www.nrk.no/urix/sor-koreas-president-opphever-unntakstilstanden-etter-press-1.17153409",
+    explain: "3. desember 2024 erkl\u00e6rte S\u00f8r-Koreas president Yoon Suk-yeol militær unntakstilstand. Parlamentet stemte den ned innen seks timer. Et dramatisk eksempel p\u00e5 at demokratiske sperrer mot maktkonsentrasjon kan virke."
+  },
+  {
+    headline: "Ny rapport: Israel ikke lenger et liberalt demokrati",
+    source: "NRK Urix",
+    type: "ekte",
+    url: "https://www.nrk.no/urix/ny-rapport_-israel-ikke-lenger-et-liberalt-demokrati-1.16813941",
+    explain: "V-dem, ett av verdens mest anerkjente demokrati-institutter, nedgraderte Israel fra \u00abliberalt demokrati\u00bb til \u00abvalg-demokrati\u00bb i 2024 \u2013 f\u00f8rste gang p\u00e5 50 \u00e5r, etter Netanyahus rettssreformer."
+  },
+  {
+    headline: "Frykter Orb\u00e1n fors\u00f8ker \u00e5 sabotere st\u00f8tte til Ukraina",
+    source: "NRK Urix",
+    type: "ekte",
+    url: "https://www.nrk.no/urix/frykter-orban-forsoker-a-sabotere-stotte-til-ukraina-1.16674436",
+    explain: "EU-ledere og Nato-sjefen bønnfalt Viktor Orb\u00e1n om \u00e5 la v\u00e6re \u00e5 blokkere hjelp til Ukraina. Saken viser spenningen mellom nasjonal suverenitet og internasjonalt samarbeid."
+  },
+  // SATIRE
+  {
+    headline: "Populistparti lover \u00e5 avskaffe alle skatter unntatt \u00e9n \u2013 den p\u00e5 folk de ikke liker",
+    source: "Dagsavisen",
+    type: "satire",
+    url: null,
+    explain: "Klassisk politisk satire: lover det umulige, men snevrer det inn til det absurde. Spiller p\u00e5 populismens logikk om \u00e5 appellere til \u00abb\u00e6rekraftige\u00bb grupper p\u00e5 bekostning av andre."
+  },
+  {
+    headline: "Ny FN-resolusjon fordømmer resolusjonene som ikke har f\u00f8rt til noe",
+    source: "TV 2",
+    type: "satire",
+    url: null,
+    explain: "Satiriserer FNs handlingslammelse ved \u00e5 vende kritikken innover. Et sentralt statsvitensskapelig poeng: vetoretten gj\u00f8r Sikkerhetsrådet ineffektivt i stormaktskonflikter."
+  },
+  {
+    headline: "Politiker lover \u00e5 lytte mer til velgerne \u2013 etter valget",
+    source: "Aftenposten",
+    type: "satire",
+    url: null,
+    explain: "Avsl\u00f8rer gapet mellom valgkampl\u00f8fter og faktisk politikk gjennom et enkelt tidsadverb. Et klassisk satirisk grep."
+  },
+  {
+    headline: "Autorit\u00e6r leder vinner demokratiprisen for \u00abstabilitet og orden\u00bb",
+    source: "Reuters",
+    type: "satire",
+    url: null,
+    explain: "Ironiserer over vestlige lands tendens til \u00e5 samarbeide med autorit\u00e6re ledere av pragmatiske grunner \u2013 et realpolitisk dilemma."
+  },
+  {
+    headline: "Regjering lanserer ny kommisjon for \u00e5 utrede behovet for en ny kommisjon",
+    source: "VG",
+    type: "satire",
+    url: null,
+    explain: "Klassisk satire p\u00e5 byr\u00e5kratisk beslutningsvegring. Gjenkjennbart fra b\u00e5de norsk og internasjonal politikk."
+  },
+  {
+    headline: "EU vedtar 847-siders direktiv for \u00e5 forenkle regelverket",
+    source: "Politico",
+    type: "satire",
+    url: null,
+    explain: "Ironiserer over EUs komplekse lovgivningsprosess \u2013 direktivet om forenkling er alt annet enn enkelt."
+  },
+  {
+    headline: "Ytringsfrihetspartiet stenger kommentarfeltet etter kritikk",
+    source: "The Guardian",
+    type: "satire",
+    url: null,
+    explain: "Peker p\u00e5 spenningen mellom \u00e5 forkjempe ytringsfrihet i prinsippet og \u00e5 t\u00e5le kritikk i praksis."
+  },
+];
+
+let satireAnswered = {};
+let satireCorrect = 0;
+let satireTotal = 0;
+let satireCurrentSet = [];
+
+function satireNew() {
+  satireAnswered = {};
+  satireCorrect = 0;
+  satireTotal = 0;
+  document.getElementById('satire-score').textContent = '';
+  // Pick 6 random: 3 ekte, 3 satire
+  const ekte   = SATIRE_ITEMS.filter(i => i.type === 'ekte').sort(() => Math.random()-0.5).slice(0,3);
+  const satire = SATIRE_ITEMS.filter(i => i.type === 'satire').sort(() => Math.random()-0.5).slice(0,3);
+  satireCurrentSet = [...ekte, ...satire].sort(() => Math.random()-0.5);
+  const grid = document.getElementById('satire-grid');
+  grid.innerHTML = satireCurrentSet.map((item, i) => `
+    <div class="satire-card" id="satire-card-${i}">
+      <div class="satire-source">${item.source}</div>
+      <div class="satire-headline">"${item.headline}"</div>
+      <div class="satire-btn-row">
+        <button class="satire-btn" onclick="satireGuess(${i},'ekte')">📰 Ekte nyhet</button>
+        <button class="satire-btn" onclick="satireGuess(${i},'satire')">🃏 Satire</button>
+      </div>
+      <div class="satire-reveal" id="satire-reveal-${i}"></div>
+    </div>
+  `).join('');
+}
+
+function satireGuess(idx, guess) {
+  if (satireAnswered[idx]) return;
+  satireAnswered[idx] = true;
+  satireTotal++;
+  const item = satireCurrentSet[idx];
+  const correct = guess === item.type;
+  if (correct) satireCorrect++;
+  const reveal = document.getElementById(`satire-reveal-${idx}`);
+  const icon = correct ? '\u2705' : '\u274c';
+  const label = item.type === 'satire' ? 'Satire' : 'Ekte nyhet';
+  const linkHtml = item.url
+    ? `<a href="${item.url}" target="_blank" rel="noopener" style="display:inline-block;margin-top:0.5rem;font-family:'DM Mono',monospace;font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:inherit;opacity:0.7;border-bottom:1px solid currentColor;text-decoration:none;">\u2197 Les saken</a>`
+    : '';
+  reveal.className = `satire-reveal show ${correct ? 'correct' : 'wrong'}`;
+  reveal.innerHTML = `<strong>${icon} ${label}.</strong> ${item.explain}${linkHtml}`;
+  document.querySelectorAll(`#satire-card-${idx} .satire-btn`).forEach(b => {
+    b.disabled = true;
+    b.style.opacity = '0.5';
+    b.style.cursor = 'default';
+  });
+  if (satireTotal > 0) {
+    const pct = Math.round(satireCorrect/satireTotal*100);
+    document.getElementById('satire-score').textContent = `${satireCorrect}/${satireTotal} riktige (${pct}%)`;
+  }
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    var m = document.getElementById('km-modal');
+    if (m) m.style.display = 'none';
+  }
+});
+
+
+function kmToggle() {
+  var body = document.getElementById('km-body');
+  var chev = document.getElementById('km-chevron');
+  var open = body.style.display !== 'none' && body.style.display !== '';
+  body.style.display = open ? 'none' : 'block';
+  chev.innerHTML = open ? '&#9660;' : '&#9650;';
+}
+
+</script>
+
+
+<footer class="site-footer">
+  Lagd av lektor Jonas P. Kjæret i samarbeid med Pome klassen av 2025/26
+</footer>
+</body>
+</html>
